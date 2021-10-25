@@ -1,11 +1,42 @@
 // Specific CSS for your home-page
 .cards {
   display:flex;
+  justify-content: space-evenly;
+  flex-flow: row wrap;
 }
 
 .card {
-  width: 50px;
-  height: 50px;
+  width: 200px;
+  height: 200px;
   border-radius: 10px;
-  background-color: lightcoral;
+  overflow: hidden;
+  margin: 15px;
+  position:relative;
+}
+
+.card img{
+  border-radius: 10px;
+  transform-origin: 50% 65%;
+  transition: transform 1.2s;
+  filter: brightness(120%);
+
+}
+
+.card:hover img {
+  filter: brightness(120%);
+  transform: scale(1.3);
+}
+
+.card-text {
+  position:absolute;
+  bottom: 25%;
+  left: 25%;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 25px;
+}
+
+.card-text button {
+  border-bottom: 1px solid red;
 }
