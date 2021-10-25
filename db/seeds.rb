@@ -1,7 +1,24 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'csv'    
+
+puts 'Empezará a insertar datos'
+puts 'Insertando Paises...'
+
+csv_countries = File.read('app/assets/backups/countries.csv')
+csv = CSV.parse(csv_countries, :headers => true)
+csv.each do |row|
+    countrie = Countrie.new(
+        name: row["name"]
+    )
+    countrie.save!
+end
+puts 'Insertando Estados de paises...'
+puts 'Ten paciencia que tardara un poco mas que el anterior (1-3 min)...'
+csv_states = File.read('app/assets/backups/states.csv')
+csv = CSV.parse(csv_states, :headers => true)
+csv.each do |row|
+    states = State.new(
+        name: row['name']
+    )
+    states.countrie = Countrie.find(row['country_id'].to_i)
+    states.save!
+end

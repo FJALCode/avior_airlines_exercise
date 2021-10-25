@@ -1,4 +1,4 @@
-.footer {
+footer {
     background: #CD171A;
     display: flex;
     align-items: center;
@@ -7,8 +7,6 @@
     padding: 0px 50px;
     color: rgba(0,0,0,0.3);
     width: 100%;
-    position: relative;
-    bottom: 0;
   }
   .footer-links {
     display: flex;
@@ -33,5 +31,5 @@
   }
 
   .logo-footer img {
-      height: 30px;
+      height: 21px;
   }
