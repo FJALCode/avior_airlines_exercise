@@ -1,0 +1,14 @@
+<div class="container mx-3">
+<h2>lista de bookings</h2>
+
+<% @bookings.each do |booky| %>
+<p><%= booky.rate.name %><p>
+<p><%= booky.offer.cost %><p>
+<p><%= booky.date %><p>
+<p><%= booky.user.name %><p>
+<%= link_to 'editar', edit_booking_path(booky.id) %>
+<h2>---------</h2>
+<% end %>
+
+<%= link_to 'nuevo booking', new_booking_path %>
+</div>

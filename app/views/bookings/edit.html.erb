@@ -1,0 +1,8 @@
+<h1>Bookings#edit HOORRRRRAAAY</h1>
+<p>Find me in app/views/bookings/edit.html.erb</p>
+<%= simple_form_for [@booking] do |f| %>
+    <%= f.input :date %>
+    <%= f.association :rate %>
+    <%= f.association :offer %>
+    <%= f.submit "eDITAR Booking", class: "btn btn-primary" %>
+  <% end %>
