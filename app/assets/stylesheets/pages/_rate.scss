@@ -4,16 +4,11 @@
     padding: 220px 0;
 }
 
-.container-rate{
-    margin: 40px auto;
-    width: 700px;
-}
-
 .baggage {
   text-align: center;
   color: #50505B;
   font-size: 18px;
-  margin: 40px;
+  margin: 20px;
 }
 
 .baggage img{
@@ -27,22 +22,46 @@
 .rate-cards {
     display: flex;
     justify-content: space-around;
+    margin: 20px;
    // grid-template-columns: 1fr 1fr 1fr;
    // grid-gap: 20px;
   }
 
-.info-card {
-    display: flex;
+.cards-info {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px auto;
+}
+
+.info-card{
+    font-size: 15px;
     color:#50505B;
+    display: flex;
+  //  justify-content: space-around;
+    justify-content: flex-start;
+    margin: 35px 0;
 }
 
 .icon-info{ 
     font-size: 20px;
+    margin-right: 20px;
 }
 
-.text-info{
-    font-size: 20px;
+.title {
+    font-weight: bold;
+}
+
+.cards-info p{
+    margin: 0;
+}
+
+.info-general{
     color:#50505B;
+    margin: 25px;
+    text-align: justify;
+}
+.info-general h3 {
+    font-weight: bold;
 }
   
 //   // Smallest device
