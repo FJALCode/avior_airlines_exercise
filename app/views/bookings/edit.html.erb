@@ -1,8 +1,10 @@
-<h1>Bookings#edit HOORRRRRAAAY</h1>
-<p>Find me in app/views/bookings/edit.html.erb</p>
+<h1>Edita tu reserva</h1>
+<p>Ingresa los datos que vas a modificar</p>
 <%= simple_form_for [@booking] do |f| %>
-    <%= f.input :date %>
-    <%= f.association :rate %>
-    <%= f.association :offer %>
-    <%= f.submit "eDITAR Booking", class: "btn btn-primary" %>
+    <%= f.input :date, label: "Fecha de vuelo" %>
+    <%= f.association :rate, label: "Tarifas" %>
+    <%= f.association :offer, label: "Ofertas" %>
+    <%= f.submit "Editar Booking", class: "btn btn-primary" %>
   <% end %>
+<br>
+<%= link_to "Volver", booking_path %>

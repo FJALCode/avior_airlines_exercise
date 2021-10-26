@@ -9,12 +9,13 @@
                 input_html: { autocomplete: "email" } %>
     <%= f.input :password,
                 required: false,
+                label: "Contraseña",
                 input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    <%= f.input :remember_me, label: "Recuérdame", as: :boolean if devise_mapping.rememberable? %>
   </div>
 
   <div class="form-actions text-center">
-    <%= f.button :submit, "Log in", class: 'btn btn-danger' %>
+    <%= f.button :submit, "Entrar", class: 'btn btn-danger' %>
   </div>
 <% end %>
 
