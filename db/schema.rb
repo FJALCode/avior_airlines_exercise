@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2021_10_26_144752) do
-=======
-ActiveRecord::Schema.define(version: 2021_10_25_212642) do
->>>>>>> 5e015c8bd854fb363ce68e0c4cbaa9dd73cd1832
+ActiveRecord::Schema.define(version: 2021_10_26_150012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +33,15 @@ ActiveRecord::Schema.define(version: 2021_10_25_212642) do
   create_table "rates", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.string "hand_baggage"
+    t.string "baggage"
+    t.string "cambios"
+    t.string "refunds"
+    t.string "child_discount"
+    t.string "miles"
+    t.string "seat"
+    t.decimal "cost"
   end
 
   create_table "states", force: :cascade do |t|
@@ -64,12 +69,6 @@ ActiveRecord::Schema.define(version: 2021_10_25_212642) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-<<<<<<< HEAD
-  add_foreign_key "bookings", "rates"
-  add_foreign_key "bookings", "states"
-  add_foreign_key "bookings", "users"
   add_foreign_key "offers", "states"
-=======
->>>>>>> 5e015c8bd854fb363ce68e0c4cbaa9dd73cd1832
   add_foreign_key "states", "countries", column: "countrie_id"
 end
