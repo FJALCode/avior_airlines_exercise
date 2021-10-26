@@ -1,14 +1,15 @@
-<div class="container mx-3">
-<h2>lista de bookings</h2>
+<div class="container my-2">
+<h2>Lista de Bookings</h2>
 
 <% @bookings.each do |booky| %>
-<p><%= booky.rate.name %><p>
-<p><%= booky.offer.cost %><p>
-<p><%= booky.date %><p>
-<p><%= booky.user.name %><p>
-<%= link_to 'editar', edit_booking_path(booky.id) %>
-<h2>---------</h2>
+<ul class="list-group list-group-flush">
+<li class="list-group-item"><%= booky.user.name %></li>
+<li class="list-group-item"><%= booky.rate.name %></li>
+<li class="list-group-item"><%= booky.offer.cost %></li>
+<li class="list-group-item"><%= booky.date %></li>
+</ul>
+<%= link_to 'Editar', edit_booking_path(booky.id), class: "btn btn-danger" %>
 <% end %>
 
-<%= link_to 'nuevo booking', new_booking_path %>
+<%= link_to 'Nuevo Booking', new_booking_path, class: "btn btn-secondary" %>
 </div>
