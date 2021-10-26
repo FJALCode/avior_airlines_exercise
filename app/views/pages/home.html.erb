@@ -4,31 +4,14 @@
     <button class="btn">Destinos nacionales</button> |
     <button class="btn">Destinos internacionales</button>
   </div>
-  <div class="cards">
-    <a href="#">
-      <div class="card">
-        <%= image_tag('panama.jpg') %>
-        <div class="card-text">Panama</div>
-      </div>
-    </a>
-    <a href="#">
-      <div class="card">
-        <%= image_tag('panama.jpg') %>
-        <div class="card-text">Panama</div>
-      </div>
-    </a>
-    <a href="#">
-      <div class="card">
-        <%= image_tag('panama.jpg') %>
-        <div class="card-text">Panama</div>
-      </div>
-    </a>
-    <a href="#">
-      <div class="card">
-        <%= image_tag('panama.jpg') %>
-        <div class="card-text">Panama</div>
-      </div>
-    </a>
-    
-  </div>
+    <div class="cards">
+      <% @states.each do |state| %>
+        <a href="#">
+          <div class="card">
+            <%= image_tag('panama.jpg') %>
+            <h2 class="card-text"><%= state.name %></h2>
+          </div>
+        </a>
+      <% end %>
+    </div>
 </div>
