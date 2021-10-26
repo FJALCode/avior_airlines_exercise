@@ -1,17 +1,82 @@
 .banner-rate {
     background-size: cover;
     background-position: center;
-    padding: 235px 0;
+    padding: 220px 0;
 }
 
 .container-rate{
-    align-items: center;
+    margin: 40px auto;
+    width: 700px;
 }
 
 .baggage {
-  width: 350px;
+  text-align: center;
+  color: #50505B;
+  font-size: 18px;
+  margin: 40px;
 }
 
 .baggage img{
-    width: 450px;
+    width: 380px;
 }
+
+.baggage h2{
+    font-weight: bolder;
+}
+
+.rate-cards {
+    display: flex;
+    justify-content: space-around;
+   // grid-template-columns: 1fr 1fr 1fr;
+   // grid-gap: 20px;
+  }
+
+.info-card {
+    display: flex;
+    color:#50505B;
+}
+
+.icon-info{ 
+    font-size: 20px;
+}
+
+.text-info{
+    font-size: 20px;
+    color:#50505B;
+}
+  
+//   // Smallest device
+//   @media (min-width: 100px) and (max-width: 575px) {
+//     .rate-cards {
+//       grid-template-columns: 1fr;
+//     }
+//   }
+  
+//   // Small devices (landscape phones, 576px and up)
+//   @media (min-width: 576px) {
+//     .rate-cards {
+//       grid-template-columns: 1fr;
+//     }
+//   }
+  
+//   // Medium devices (tablets, 768px and up)
+//   @media (min-width: 768px) {
+//     .rate-cards {
+//       grid-template-columns: 1fr 1fr;
+//     }
+//   }
+  
+//   // Large devices (desktops, 992px and up)
+//   @media (min-width: 992px) {
+//     .rate-cards {
+//       grid-template-columns: 1fr 1fr 1fr;
+//     }
+//   }
+  
+//   // Extra large devices (large desktops, 1200px and up)
+//   @media (min-width: 1200px) {
+//     .rate-cards {
+//       grid-template-columns: 1fr 1fr 1fr;
+//     }
+//   }
+  
