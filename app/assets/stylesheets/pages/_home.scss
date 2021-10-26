@@ -1,13 +1,13 @@
 // Specific CSS for your home-page
 .cards {
   display:flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-flow: row wrap;
 }
 
 .card {
-  width: 200px;
-  height: 200px;
+  width: 282px;
+  height: 282px;
   border-radius: 10px;
   overflow: hidden;
   margin: 15px;
