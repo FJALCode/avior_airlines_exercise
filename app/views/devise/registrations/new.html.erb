@@ -9,46 +9,49 @@
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
     <div class="row">
-      <div class="col">
+      <div class="col-sm-12 col-md-12 col-lg-6">
         <%= f.input :name,
                     required: true,
                     autofocus: true,
                     input_html: { autocomplete: "name" } %>
       </div>
-      <div class="col">
+      <div class="col-sm-12 col-md-12 col-lg-6">
     <%= f.input :last_name,
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "last_name" } %>
       </div>
-      <div class="col">
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-6">
         <%= f.input :id_number,
                     required: true,
                     autofocus: true,
                     input_html: { autocomplete: "id_number" } %>
       </div>
-    </div>
-    <div class="row">
-      <div class="col">
+      <div class="col-sm-12 col-md-12 col-lg-6">
         <%= f.input :phone,
                     required: true,
                     autofocus: true,
                     input_html: { autocomplete: "phone" } %>
       </div>
-      <div class="col">
-        <%= f.input :birthdate,
-           required: true,
-           autofocus: true %>
+    </div>
+    <div class="row">
+      
+      <div class="col-12">
+      <%= f.input :birthdate,
+      required: true,
+      autofocus: true %>
       </div>
     </div>
     <div class="row">
-      <div class="col">
+      <div class="col-sm-12 col-md-12 col-lg-6">
         <%= f.input :password,
                     required: true,
                     hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                     input_html: { autocomplete: "new-password" } %>
       </div>
-      <div class="col">
+      <div class="col-sm-12 col-md-12 col-lg-6">
         <%= f.input :password_confirmation,
                     required: true,
                     input_html: { autocomplete: "new-password" } %>
@@ -57,7 +60,7 @@
   </div>
 
   <div class="form-actions text-center">
-    <%= f.button :submit, "Sign up", class: "btn btn-danger" %>
+    <%= f.button :submit, "Sign up", class: 'btn btn-danger' %>
   </div>
 <% end %>
 <br>
