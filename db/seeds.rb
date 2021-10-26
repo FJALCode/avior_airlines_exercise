@@ -3,10 +3,20 @@ require "date"
 
 STATES = State.all
 
+Countrie.destroy_all
+State.destroy_all
+Offer.destroy_all
+Rate.destroy_all
+User.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('countries')
+ActiveRecord::Base.connection.reset_pk_sequence!('states')
+ActiveRecord::Base.connection.reset_pk_sequence!('offers')
+ActiveRecord::Base.connection.reset_pk_sequence!('rates')
+ActiveRecord::Base.connection.reset_pk_sequence!('users')
+
 puts "Empezará a insertar datos"
 puts "Insertando Usuarios....."
 puts ""
-
 User.create([{ email: "fernando@gmail.com", name: "fernando", last_name: "Lopez", password: "123456", password_confirmation: "123456", id_number: "V-2512352", phone: "+58414232352", birthdate: "2002-12-12" }])
 puts "Usuario: fernando@gmail.com, Contraseña: 123456"
 
@@ -61,7 +71,6 @@ end
 
 puts ""
 puts "Insertando Tarifas de vuelos..."
-
 Rate.create(name: "Medium", hand_baggage: "1 cambio, 8 Kg", baggage: "1 pieza, 23 Kg", cambios: "10% de penalidad", refunds: "15% de penalidad", child_discount: "", miles: "true", seat: "true", cost: 200)
 Rate.create(name: "Ultra", hand_baggage: "1 cambio, 8 Kg", baggage: "1 pieza, 23 Kg", cambios: "10% de penalidad", refunds: "15% de penalidad", child_discount: "true", miles: "true", seat: "true", cost: 300)
 Rate.create(name: "Business", hand_baggage: "1 cambio, 8 Kg", baggage: "1 pieza, 23 Kg", cambios: "10% de penalidad", refunds: "15% de penalidad", child_discount: "true", miles: "", seat: "true", cost: 400)
