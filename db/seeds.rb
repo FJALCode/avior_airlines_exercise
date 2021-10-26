@@ -2,17 +2,23 @@ require "csv"
 require "date"
 
 STATES = State.all
-
+puts "Borrando paises"
 Countrie.destroy_all
+puts "Borrando estados"
 State.destroy_all
+puts "Borrando ofertas"
 Offer.destroy_all
+puts "Borrando rates"
 Rate.destroy_all
+puts "Borrando usuarios"
 User.destroy_all
+puts "Reiniciando secuencia"
 ActiveRecord::Base.connection.reset_pk_sequence!('countries')
 ActiveRecord::Base.connection.reset_pk_sequence!('states')
 ActiveRecord::Base.connection.reset_pk_sequence!('offers')
 ActiveRecord::Base.connection.reset_pk_sequence!('rates')
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
+puts ""
 
 puts "Empezará a insertar datos"
 puts "Insertando Usuarios....."
@@ -65,8 +71,8 @@ end
 puts ""
 puts "Insertando 100 Ofertas de vuelos..."
 STATES.each_with_index do |state, index|
-  Offer.create(state: state, cost: index, date: "2002-12-12")
-  break if index < 100
+  Offer.create(state: state, cost: (100..1000).to_a.sample, date: "2002-12-12")
+  break if index > 100
 end
 
 puts ""

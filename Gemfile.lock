@@ -113,7 +113,7 @@ GEM
     minitest (5.14.4)
     msgpack (1.4.2)
     nio4r (2.5.8)
-    nokogiri (1.12.5-x86_64-linux)
+    nokogiri (1.12.5-x86_64-darwin)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.2.3)
@@ -229,7 +229,7 @@ GEM
     zeitwerk (2.5.1)
 
 PLATFORMS
-  x86_64-linux
+  x86_64-darwin-17
 
 DEPENDENCIES
   autoprefixer-rails (= 10.2.5)
@@ -261,8 +261,4 @@ RUBY VERSION
    ruby 2.7.3p183
 
 BUNDLED WITH
-<<<<<<< HEAD
-   2.2.26
-=======
-   2.2.27
->>>>>>> e46682d44419116f97ffdb29e5ec4887a9b9ec41
+   2.2.28
