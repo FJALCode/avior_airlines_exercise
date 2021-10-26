@@ -77,9 +77,9 @@ end
 
 puts ""
 puts "Insertando Tarifas de vuelos..."
-Rate.create(name: "Medium", hand_baggage: "1 cambio, 8 Kg", baggage: "1 pieza, 23 Kg", cambios: "10% de penalidad", refunds: "15% de penalidad", child_discount: "", miles: "true", seat: "true", cost: 200)
+Rate.create(name: "Medium", hand_baggage: "1 cambio, 8 Kg", baggage: "1 pieza, 23 Kg", cambios: "10% de penalidad", refunds: "15% de penalidad", child_discount: "true", miles: "true", seat: "true", cost: 200)
 Rate.create(name: "Ultra", hand_baggage: "1 cambio, 8 Kg", baggage: "1 pieza, 23 Kg", cambios: "10% de penalidad", refunds: "15% de penalidad", child_discount: "true", miles: "true", seat: "true", cost: 300)
-Rate.create(name: "Business", hand_baggage: "1 cambio, 8 Kg", baggage: "1 pieza, 23 Kg", cambios: "10% de penalidad", refunds: "15% de penalidad", child_discount: "true", miles: "", seat: "true", cost: 400)
+Rate.create(name: "Business", hand_baggage: "1 cambio, 8 Kg", baggage: "1 pieza, 23 Kg", cambios: "10% de penalidad", refunds: "15% de penalidad", child_discount: "true", miles: "true", seat: "true", cost: 400)
 
 puts ""
 puts "Seed Completado"
