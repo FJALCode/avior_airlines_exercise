@@ -20,10 +20,14 @@ class BookingsController < ApplicationController
 
   def index
     @user = current_user
-    @bookings = Booking.find(params[:id])
-    if @bookings.user_id == @user.id
-      @bookings
+    @bookings = Booking.all
+    @user_bookings = []
+    @bookings.each do |booking|
+      if booking.user_id == @user.id
+        @user_bookings << booking
+      end
     end
+    @user_bookings
   end
 
   # En revision...
