@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def home
-    @states = State.first(10)
+    @offers = Offer.first(9)
   end
 end

@@ -1,4 +1,5 @@
 require "csv"
+require "faker"
 require "date"
 
 STATES = State.all
@@ -13,35 +14,35 @@ Rate.destroy_all
 puts "Borrando usuarios"
 User.destroy_all
 puts "Reiniciando secuencia"
-ActiveRecord::Base.connection.reset_pk_sequence!('countries')
-ActiveRecord::Base.connection.reset_pk_sequence!('states')
-ActiveRecord::Base.connection.reset_pk_sequence!('offers')
-ActiveRecord::Base.connection.reset_pk_sequence!('rates')
-ActiveRecord::Base.connection.reset_pk_sequence!('users')
+ActiveRecord::Base.connection.reset_pk_sequence!("countries")
+ActiveRecord::Base.connection.reset_pk_sequence!("states")
+ActiveRecord::Base.connection.reset_pk_sequence!("offers")
+ActiveRecord::Base.connection.reset_pk_sequence!("rates")
+ActiveRecord::Base.connection.reset_pk_sequence!("users")
 puts ""
 
 puts "Empezará a insertar datos"
 puts "Insertando Usuarios....."
 puts ""
-User.create([{ email: "fernando@gmail.com", name: "fernando", last_name: "Lopez", password: "123456", password_confirmation: "123456", id_number: "V-2512352", phone: "+58414232352", birthdate: "2002-12-12" }])
+User.create([{ email: "fernando@gmail.com", name: "fernando", last_name: "Lopez", password: "123456", password_confirmation: "123456", id_number: "V-2512352", phone: "+58414232352", birthdate: Faker::Date.birthday(18, 65) }])
 puts "Usuario: fernando@gmail.com, Contraseña: 123456"
 
-User.create([{ email: "alfredo@gmail.com", name: "alfredo", last_name: "Lopez", password: "123456", password_confirmation: "123456", id_number: "V-2512352", phone: "+58414232352", birthdate: "2002-12-12" }])
+User.create([{ email: "alfredo@gmail.com", name: "alfredo", last_name: "Lopez", password: "123456", password_confirmation: "123456", id_number: "V-2512352", phone: "+58414232352", birthdate: Faker::Date.birthday(18, 65) }])
 puts "Usuario: alfredo@gmail.com, Contraseña: 123456"
 
-User.create([{ email: "genesis@gmail.com", name: "genesis", last_name: "Lopez", password: "123456", password_confirmation: "123456", id_number: "V-2512352", phone: "+58414232352", birthdate: "2002-12-12" }])
+User.create([{ email: "genesis@gmail.com", name: "genesis", last_name: "Lopez", password: "123456", password_confirmation: "123456", id_number: "V-2512352", phone: "+58414232352", birthdate: Faker::Date.birthday(18, 65) }])
 puts "Usuario: genesis@gmail.com, Contraseña: 123456"
 
-User.create([{ email: "jesus@gmail.com", name: "jesus", last_name: "Lopez", password: "123456", password_confirmation: "123456", id_number: "V-2512352", phone: "+58414232352", birthdate: "2002-12-12" }])
+User.create([{ email: "jesus@gmail.com", name: "jesus", last_name: "Lopez", password: "123456", password_confirmation: "123456", id_number: "V-2512352", phone: "+58414232352", birthdate: Faker::Date.birthday(18, 65) }])
 puts "Usuario: jesus@gmail.com, Contraseña: 123456"
 
-User.create([{ email: "javier@gmail.com", name: "javier", last_name: "Lopez", password: "123456", password_confirmation: "123456", id_number: "V-2512352", phone: "+58414232352", birthdate: "2002-12-12" }])
+User.create([{ email: "javier@gmail.com", name: "javier", last_name: "Lopez", password: "123456", password_confirmation: "123456", id_number: "V-2512352", phone: "+58414232352", birthdate: Faker::Date.birthday(18, 65) }])
 puts "Usuario: javier@gmail.com, Contraseña: 123456"
 
-User.create([{ email: "juan@gmail.com", name: "juan", last_name: "Lopez", password: "123456", password_confirmation: "123456", id_number: "V-2512352", phone: "+58414232352", birthdate: "2002-12-12" }])
+User.create([{ email: "juan@gmail.com", name: "juan", last_name: "Lopez", password: "123456", password_confirmation: "123456", id_number: "V-2512352", phone: "+58414232352", birthdate: Faker::Date.birthday(18, 65) }])
 puts "Usuario: juan@gmail.com, Contraseña: 123456"
 
-User.create([{ email: "maria@gmail.com", name: "maria", last_name: "Lopez", password: "123456", password_confirmation: "123456", id_number: "V-2512352", phone: "+58414232352", birthdate: "2002-12-12" }])
+User.create([{ email: "maria@gmail.com", name: "maria", last_name: "Lopez", password: "123456", password_confirmation: "123456", id_number: "V-2512352", phone: "+58414232352", birthdate: Faker::Date.birthday(18, 65) }])
 puts "Usuario: maria@gmail.com, Contraseña: 123456"
 
 puts ""
@@ -71,8 +72,8 @@ end
 puts ""
 puts "Insertando 100 Ofertas de vuelos..."
 STATES.each_with_index do |state, index|
-  Offer.create(state: state, cost: (100..1000).to_a.sample, date: "2002-12-12")
-  break if index > 100
+  Offer.create(state: state, cost: (100..1000).to_a.sample, date: Faker::Date.forward(150))
+  break if index > 15
 end
 
 puts ""
