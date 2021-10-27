@@ -1,50 +1,25 @@
-// Specific CSS for your home-page
-// .cards-home {
-//   display:flex;
-//   justify-content: space-between;
-//   flex-flow: row wrap;
-// }
-
-// .card-home {
-//   width: 282px;
-//   height: 282px;
-//   border-radius: 10px;
-//   overflow: hidden;
-//   margin: 15px;
-//   position:relative;
-// }
-
-// .card-home img{
-//   border-radius: 10px;
-//   transform-origin: 50% 65%;
-//   transition: transform 1.2s;
-//   filter: brightness(120%);
-
-// }
-
-// .card-img:hover {
-//   filter: brightness(120%);
-//   transform: scale(1.3);
-// }
-
-.card-text-home {
-  position:absolute;
-  bottom: 25%;
-  left: 25%;
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 25px;
+.card {
+  width: 282px;
+  height: 282px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 15px;
 }
 
-// .card-text button {
-//   border-bottom: 1px solid red;
-// }
+.card a .card-img{
+  border-radius: 10px;
+  transform-origin: 50% 65%;
+  transition: transform 1.2s;
+  filter: brightness(120%);
+}
 
-.card-img{
-  opacity: 0.5;
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  object-position: center;
+.card a:hover .card-img {
+  filter: brightness(120%);
+  transform: scale(1.3);
+}
+
+.card-text-home {
+  color: white;
+  font-weight: 500;
+  font-size: 25px;
 }
