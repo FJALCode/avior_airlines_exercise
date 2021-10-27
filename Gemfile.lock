@@ -96,6 +96,7 @@ GEM
     ffi (1.15.4)
     font-awesome-sass (5.15.1)
       sassc (>= 1.11)
+    geocoder (1.7.0)
     globalid (0.5.2)
       activesupport (>= 5.0)
     i18n (1.8.10)
@@ -246,6 +247,7 @@ DEPENDENCIES
   dotenv-rails
   faker (~> 1.9.6)
   font-awesome-sass
+  geocoder (~> 1.7)
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
   pry-byebug

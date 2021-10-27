@@ -33,6 +33,7 @@ gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'faker', '~> 1.9.6'
+gem 'geocoder', '~> 1.7'
 
 group :development, :test do
   gem 'pry-byebug'

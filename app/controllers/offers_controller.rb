@@ -11,6 +11,11 @@ class OffersController < ApplicationController
   def show
     @state = State.find(@offer.state_id)
     @country = Countrie.find(@state.countrie_id)
+    @markers = [{
+      lat: @state.latitude,
+      lng: @state.longitude,
+      info_window: render_to_string(partial: "info_window", locals: { state: @state }),
+    }]
   end
 
   # GET /offers/new

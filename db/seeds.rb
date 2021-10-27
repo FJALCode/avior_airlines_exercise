@@ -51,7 +51,7 @@ csv_countries = File.read("app/assets/backups/countries.csv")
 csv = CSV.parse(csv_countries, :headers => true)
 csv.each do |row|
   countrie = Countrie.new(
-    name: row["name"],
+    name: row["name"]
   )
   countrie.save!
 end
@@ -64,6 +64,8 @@ csv = CSV.parse(csv_states, :headers => true)
 csv.each do |row|
   states = State.new(
     name: row["name"],
+    latitude: row["latitude"].to_f,
+    longitude: row["longitude"].to_f
   )
   states.countrie = Countrie.find(row["country_id"].to_i)
   states.save!
