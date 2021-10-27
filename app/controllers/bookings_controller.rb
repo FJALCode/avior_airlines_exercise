@@ -21,12 +21,9 @@ class BookingsController < ApplicationController
   end
 
   def index
-<<<<<<< HEAD
     @bookings = policy_scope(Booking)
     authorize @bookings
-=======
     @user = current_user
->>>>>>> 6dc18e0ad31689687d7486d5215e1753f467a0e9
     @bookings = Booking.all
     @user_bookings = []
     @bookings.each do |booking|
