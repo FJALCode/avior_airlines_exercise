@@ -7,16 +7,22 @@ class BookingsController < ApplicationController
 
   def create
     @user = current_user
+    @offer = Offer.find(params[:offer_id])
     @booking = Booking.new(booking_params)
     @booking.user = @user
-    @booking.save
-    redirect_to bookings_path
+    @booking.offer = @offer
+    if @booking.save
+      redirect_to bookings_path, notice: 'Booking creado exitosamente.'
+    else
+      redirect_to offer_path(@offer)
+    end
   end
 
   def index
     @bookings = Booking.all
   end
 
+  # En revision...
   def edit
     @user = current_user
     @booking = Booking.find(params[:id])
