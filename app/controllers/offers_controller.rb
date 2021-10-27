@@ -1,6 +1,7 @@
 class OffersController < ApplicationController
   #   before_action :set_offer, only: [:show, :edit, :update, :destroy]
   before_action :set_offer, only: [:show]
+  before_action :authenticate_user!, only: [:show]
 
   # GET /offers
   def index

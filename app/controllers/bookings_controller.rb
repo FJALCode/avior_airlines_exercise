@@ -1,5 +1,7 @@
 class BookingsController < ApplicationController
   before_action :set_user, only: [:create, :edit, :update]
+  before_action :authenticate_user!
+
   def new
     @user = current_user
     @booking = Booking.new
