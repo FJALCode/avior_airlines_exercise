@@ -3,6 +3,7 @@ class BookingsController < ApplicationController
   def new
     @user = current_user
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
@@ -11,6 +12,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = @user
     @booking.offer = @offer
+    authorize @booking
     if @booking.save
       redirect_to bookings_path, notice: 'Booking creado exitosamente.'
     else
@@ -19,6 +21,8 @@ class BookingsController < ApplicationController
   end
 
   def index
+    @bookings = policy_scope(Booking)
+    authorize @bookings
     @bookings = Booking.all
   end
 

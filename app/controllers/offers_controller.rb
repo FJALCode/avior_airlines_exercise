@@ -4,11 +4,14 @@ class OffersController < ApplicationController
 
   # GET /offers
   def index
+    @offers = policy_scope(Offer)
+    authorize @offers
     @offers = Offer.all
   end
 
   # GET /offers/1
   def show
+    authorize @offer
     @state = State.find(@offer.state_id)
     @country = Countrie.find(@state.countrie_id)
     @booking = Booking.new
