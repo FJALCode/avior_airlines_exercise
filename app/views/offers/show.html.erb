@@ -32,7 +32,8 @@
             <p><%= @offer.date %></p>
           </div>
         </div>
-        <%= b.input :rate_id, collection: @rates %>
+        <h4>Tarifas:</h4>
+        <%= b.input :rate_id, collection: @rates, label: false %>
         <div class="form-actions">
           <%= b.submit "Reservar Vuelo", class: "btn btn-primary" %>
         </div>
@@ -45,7 +46,6 @@
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     </div>
   </div>
-  <div class="form-inputs">
-    <%= link_to 'Volver', offers_path, class: "btn btn-primary mt-3" %>
-  </div>
+  <br>
+  <%= link_to " Back", offers_path, class: "fas fa-arrow-left"%>
 </div>
