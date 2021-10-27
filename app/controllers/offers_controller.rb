@@ -11,6 +11,7 @@ class OffersController < ApplicationController
   def show
     @state = State.find(@offer.state_id)
     @country = Countrie.find(@state.countrie_id)
+    @booking = Booking.new
     @markers = [{
       lat: @state.latitude,
       lng: @state.longitude,

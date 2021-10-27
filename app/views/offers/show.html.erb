@@ -5,30 +5,38 @@
   <div class="row">
     <div class="col-md-12 col-lg-6">
       <h2>Información del vuelo</h2>
-      <div class="row">
-        <div class="col">
-          <h4>Pais:</h4>
-          <p><%= @country.name %></p>
+      <%= simple_form_for [@offer, @booking] do |b| %>
+        <% @rates = Rate.all %>
+        <div class="row">
+          <div class="col">
+            <h4>Pais:</h4>
+            <p><%= @country.name %></p>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <h4>Estado:</h4>
-          <p><%= @state.name %></p>
+        <div class="row">
+          <div class="col">
+            <h4>Estado:</h4>
+            <p><%= @state.name %></p>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <h4>Costo:</h4>
-          <p><%= @offer.cost %>$</p>
+        <div class="row">
+          <div class="col">
+            <h4>Costo:</h4>
+            <p><%= @offer.cost %>$</p>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <h4>Fecha:</h4>
-          <p><%= @offer.date %></p>
+        <div class="row">
+          <div class="col">
+            <h4>Fecha:</h4>
+            <%= b.input :date, as: :hidden,input_html: { value: @offer.date} %>
+            <p><%= @offer.date %></p>
+          </div>
         </div>
-      </div>
+        <%= b.input :rate_id, collection: @rates %>
+        <div class="form-actions">
+          <%= b.submit "Reservar Vuelo", class: "btn btn-primary" %>
+        </div>
+      <% end %>
     </div>
     <div class="col-md-12 col-lg-6">
       <div id="map"
@@ -37,5 +45,7 @@
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     </div>
   </div>
-  <%= link_to "Reservar Vuelo", bookings_path, class: "btn btn-primary mt-3" %>
-  <%= link_to 'Back', offers_path %>
+  <div class="form-inputs">
+    <%= link_to 'Volver', offers_path, class: "btn btn-primary mt-3" %>
+  </div>
+</div>
