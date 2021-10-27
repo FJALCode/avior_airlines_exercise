@@ -5,7 +5,7 @@
     <% @offers.each do |offer| %>
       <% state = State.find(offer.state_id) %>
       <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 m-2" data-aos="zoom-in">
-        <div class="card bg-dark text-white">
+        <div class="card-home bg-dark text-white">
           <%= link_to offer do %>
             <%= image_tag('panama.jpg', class:"card-img") %>
             <div class="card-img-overlay text-center">
