@@ -1,0 +1,26 @@
+<%# <div class="offer-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image-url('halloween.webp');" > %>
+<div class="offer-banner" style="background-image: url('https://images.unsplash.com/photo-1597389110829-7a0d5e6a8d0e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80')">
+  <h2>Descubre los mejores destinos a tu lugar favorito!</h2>
+</div>
+<div class="container mt-3 mb-3">
+  <h1>Ofertas en vuelos disponibles</h1>
+  <div class="row">
+    <% @offers.each do |offer| %>
+      <% state = State.find(offer.state_id) %>
+      <% country = Countrie.find(state.countrie_id) %>
+      <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 m-2" data-aos="zoom-in">
+        <div class="card" style="width: 18rem;">
+          <%= link_to image_tag('https://images.unsplash.com/photo-1550435913-3f0d9ac998fe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80', class:"card-img-top"), offer %>
+          <div class="card-body">
+            <h2 class="card-text offer-text"><%= state.name %></h2>
+            <p class="card-text offer-text"> <strong>Pais:</strong> <%= country.name %></p>
+            <p class="card-text offer-text"> <strong>Cost:</strong> <%= offer.cost %>$</p>
+            <p class="card-text offer-text"> <strong>Fecha:</strong> <%= offer.date %></p>
+            <p class="card-text offer-text"> <strong>Capacidad:</strong> Disponible</p>
+            <%= link_to "Más Información...", offer, class: "btn btn-primary mt-3" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

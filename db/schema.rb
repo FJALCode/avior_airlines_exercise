@@ -10,10 +10,61 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_25_170523) do
+ActiveRecord::Schema.define(version: 2021_10_27_125925) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "rate_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "offer_id", null: false
+    t.date "date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["offer_id"], name: "index_bookings_on_offer_id"
+    t.index ["rate_id"], name: "index_bookings_on_rate_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "countries", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "offers", force: :cascade do |t|
+    t.bigint "state_id", null: false
+    t.integer "cost"
+    t.date "date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["state_id"], name: "index_offers_on_state_id"
+  end
+
+  create_table "rates", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.string "hand_baggage"
+    t.string "baggage"
+    t.string "cambios"
+    t.string "refunds"
+    t.string "child_discount"
+    t.string "miles"
+    t.string "seat"
+    t.decimal "cost"
+  end
+
+  create_table "states", force: :cascade do |t|
+    t.string "name"
+    t.bigint "countrie_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.float "latitude"
+    t.float "longitude"
+    t.index ["countrie_id"], name: "index_states_on_countrie_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +74,18 @@ ActiveRecord::Schema.define(version: 2021_10_25_170523) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.string "last_name"
+    t.string "id_number"
+    t.string "phone"
+    t.date "birthdate"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "offers"
+  add_foreign_key "bookings", "rates"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "offers", "states"
+  add_foreign_key "states", "countries", column: "countrie_id"
 end

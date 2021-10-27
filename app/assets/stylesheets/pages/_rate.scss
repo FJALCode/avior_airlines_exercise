@@ -1,0 +1,101 @@
+.banner-rate {
+    background-size: cover;
+    background-position: center;
+    padding: 220px 0;
+}
+
+.baggage {
+  text-align: center;
+  color: #50505B;
+  font-size: 18px;
+  margin: 20px;
+}
+
+.baggage img{
+    width: 380px;
+}
+
+.baggage h2{
+    font-weight: bolder;
+}
+
+.rate-cards {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+   // grid-template-columns: 1fr 1fr 1fr;
+   // grid-gap: 20px;
+  }
+
+.cards-info {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px auto;
+}
+
+.info-card{
+    font-size: 15px;
+    color:#50505B;
+    display: flex;
+  //  justify-content: space-around;
+    justify-content: flex-start;
+    margin: 35px 0;
+}
+
+.icon-info{ 
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.cards-info p{
+    margin: 0;
+}
+
+.info-general{
+    color:#50505B;
+    margin: 25px;
+    text-align: justify;
+}
+.info-general h3 {
+    font-weight: bold;
+}
+  
+//   // Smallest device
+//   @media (min-width: 100px) and (max-width: 575px) {
+//     .rate-cards {
+//       grid-template-columns: 1fr;
+//     }
+//   }
+  
+//   // Small devices (landscape phones, 576px and up)
+//   @media (min-width: 576px) {
+//     .rate-cards {
+//       grid-template-columns: 1fr;
+//     }
+//   }
+  
+//   // Medium devices (tablets, 768px and up)
+//   @media (min-width: 768px) {
+//     .rate-cards {
+//       grid-template-columns: 1fr 1fr;
+//     }
+//   }
+  
+//   // Large devices (desktops, 992px and up)
+//   @media (min-width: 992px) {
+//     .rate-cards {
+//       grid-template-columns: 1fr 1fr 1fr;
+//     }
+//   }
+  
+//   // Extra large devices (large desktops, 1200px and up)
+//   @media (min-width: 1200px) {
+//     .rate-cards {
+//       grid-template-columns: 1fr 1fr 1fr;
+//     }
+//   }
+  
