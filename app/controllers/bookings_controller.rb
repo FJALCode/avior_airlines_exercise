@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to bookings_path, notice: 'Booking creado exitosamente.'
     else
-      redirect_to offer_path(@offer), alert: 'Wrong parmeters for date'
+      redirect_to offer_path(@offer), alert: 'Wrong parmeters'
     end
   end
 
