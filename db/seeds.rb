@@ -73,11 +73,10 @@ end
 
 puts ""
 puts "Insertando 100 Ofertas de vuelos..."
-STATES.each_with_index do |state, index|
+# Manera ruby
+STATES.each do |state|
   Offer.create(state: state, cost: (100..1000).to_a.sample, date: Faker::Date.forward(150))
-  break if index > 15
 end
-
 puts ""
 puts "Insertando Tarifas de vuelos..."
 Rate.create(name: "Medium", hand_baggage: "1 cambio, 8 Kg", baggage: "1 pieza, 23 Kg", cambios: "10% de penalidad", refunds: "15% de penalidad", child_discount: "true", miles: "true", seat: "true", cost: 200)

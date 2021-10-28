@@ -35,6 +35,7 @@ gem 'simple_form'
 gem 'faker', '~> 1.9.6'
 gem 'geocoder', '~> 1.7'
 gem 'pundit'
+gem "pg_search", "~> 2.3.0"
 
 group :development, :test do
   gem 'pry-byebug'
