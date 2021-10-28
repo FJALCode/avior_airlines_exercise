@@ -13,11 +13,13 @@
     </div>
     <div class="card-body">
         <blockquote class="blockquote mb-0">
-        <%costo_vuelo = booky.offer.cost%>  
-        <%costo_tarifa = booky.rate.cost%> 
+        <%costo_vuelo = booky.offer.cost%>
+        <%costo_tarifa = booky.rate.cost%>
         <%total_costo = costo_tarifa + costo_vuelo%>
         <p style="font-size:18px;">Destino: <%=country.name%>, <%= state.name %></p>
         <p style="font-size:18px;">Fecha del vuelo: <%= booky.date %></p>
+        <p style="font-size:18px;">Fecha del salida: <%= booky.fec_ini %></p>
+        <p style="font-size:18px;">Fecha del retorno: <%= booky.fec_end %></p>
         <p style="font-size:18px;">Tarifa elegida: <%= booky.rate.name %></p>
         <p style="font-size:18px;">Costo de tarifa: <%= booky.rate.cost %>$</p>
         <p style="font-size:18px;">Costo del vuelo: <span> <%= booky.offer.cost %>$</span></p>
@@ -30,3 +32,5 @@
 
 
 </div>
+
+<%= console %>
