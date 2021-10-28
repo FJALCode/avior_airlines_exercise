@@ -1,7 +1,6 @@
 <h1>Edita tu reserva</h1>
 <p>Ingresa los datos que vas a modificar</p>
 <%= simple_form_for [@booking] do |f| %>
-    <%= f.input :date, label: "Fecha de vuelo" %>
     <%= f.association :rate, label: "Tarifas" %>
     <%= f.association :offer, label: "Ofertas" %>
     <%= f.submit "Editar Booking", class: "btn btn-primary" %>

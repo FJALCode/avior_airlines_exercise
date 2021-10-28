@@ -40,9 +40,10 @@ ActiveRecord::Schema.define(version: 2021_10_28_195008) do
     t.bigint "rate_id", null: false
     t.bigint "user_id", null: false
     t.bigint "offer_id", null: false
-    t.date "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "fec_ini"
+    t.date "fec_end"
     t.index ["offer_id"], name: "index_bookings_on_offer_id"
     t.index ["rate_id"], name: "index_bookings_on_rate_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"

@@ -7,7 +7,18 @@ class OffersController < ApplicationController
   def index
     @offers = policy_scope(Offer)
     authorize @offers
-    @offers = Offer.all
+    # @offers = Offer.all
+    if params[:query].present?
+      # @offers = Offer.where(cost: params[:query])
+      #sql_query = "states.name ILIKE :query"
+      # @offers = Offer.joins(:state).where(sql_query, query: "%#{params[:query]}%")
+      @offers = Offer.global_search(params[:query])
+    else
+      # Luego de modificar el seed para que traiga TODAS las ofertas
+      # cambiar *Offer.all* para mostrar un grupo reducido de Offers
+      @offers = Offer.take(15)
+    end
+
   end
 
   # GET /offers/1

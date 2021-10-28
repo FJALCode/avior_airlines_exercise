@@ -4,6 +4,14 @@
 </div>
 <div class="container mt-3 mb-3">
   <h1>Ofertas en vuelos disponibles</h1>
+  <%# Insertar form de búsqueda aquí %>
+  <%= form_tag offers_path, method: :get do %>
+    <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Encuentra tu destino ideal" %>
+    <%= submit_tag "Buscar", class: "btn btn-danger" %>
+  <% end %>
   <div class="row">
     <% @offers.each do |offer| %>
       <% state = State.find(offer.state_id) %>
