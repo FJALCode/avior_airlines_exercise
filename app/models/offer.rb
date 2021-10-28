@@ -4,6 +4,7 @@ class Offer < ApplicationRecord
   has_many :countries, through: :state, source: :countrie
   # Respetar la convencion
   validates :cost, :date, presence: true
+  has_one_attached :photo_url
 
   include PgSearch::Model
   pg_search_scope :global_search,

@@ -1,6 +1,15 @@
-<div class="offer-banner" style="background-image: url('https://images.unsplash.com/photo-1596120236172-231999844ade?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')">
-  <h2><%= @country.name %></h2>
-</div>
+<% if @offer.photo_url.attached? %>
+  <div class="offer-banner" style="background-image: url('<%= cl_image_path @offer.photo_url.key %>')" >
+    <h2><%= @country.name %></h2>
+  </div>
+<% else %>
+  <div class="offer-banner" style="background-image: url('https://images.unsplash.com/photo-1596120236172-231999844ade?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')">
+    <h2><%= @country.name %></h2>
+  </div>
+<% end %>
+
+<%# <div class="offer-banner" style="background-image: url('https://images.unsplash.com/photo-1596120236172-231999844ade?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')">
+  <h2><%= @country.name %><%#</h2></div> %>
 <div class="container mt-5 mb-5">
   <div class="row">
     <div class="col-md-12 col-lg-6">
@@ -40,7 +49,7 @@
         <h4>Tarifas:</h4>
         <%= b.input :rate_id, collection: @rates, label: false %>
         <div class="form-actions">
-          <%= b.submit "Reservar Vuelo", class: "btn btn-primary" %>
+          <%= b.submit "Reservar Vuelo", class: "btn btn-danger" %>
         </div>
       <% end %>
     </div>
@@ -50,6 +59,12 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     </div>
+  </div>
+  <div class="form-inputs">
+    <%= link_to 'Volver', offers_path, class: "btn btn-secondary mt-3" %>
+  </div>
+  <div class="form-inputs">
+    <%= link_to 'Editar', edit_offer_path, class: "btn btn-danger mt-3" %>
   </div>
   <br>
   <%= link_to " Back", offers_path, class: "fas fa-arrow-left"%>
