@@ -51,7 +51,8 @@ csv_countries = File.read("app/assets/backups/countries.csv")
 csv = CSV.parse(csv_countries, :headers => true)
 csv.each do |row|
   countrie = Countrie.new(
-    name: row["name"]
+    name: row["name"],
+    iso2: row["iso2"]
   )
   countrie.save!
 end
@@ -67,12 +68,12 @@ csv.each do |row|
     latitude: row["latitude"].to_f,
     longitude: row["longitude"].to_f
   )
-  states.countrie = Countrie.find(row["country_id"].to_i)
+  states.countrie = Countrie.find_by(iso2: row["country_code"])
   states.save!
 end
 
 puts ""
-puts "Insertando 100 Ofertas de vuelos..."
+puts "Insertando #{STATES.count} Ofertas de vuelos..."
 # Manera ruby
 STATES.each do |state|
   Offer.create(state: state, cost: (100..1000).to_a.sample, date: Faker::Date.forward(150))
