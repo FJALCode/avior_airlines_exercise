@@ -1,19 +1,21 @@
 <%= render 'components/banner' %>
-<div class="container mt-3">
-  <h2>Nuestras mejores ofertas</h2>
-  <div class="row">
-    <% @offers.each do |offer| %>
-      <% state = State.find(offer.state_id) %>
-      <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 m-2" data-aos="zoom-in">
-        <div class="card-home bg-dark text-white">
-          <%= link_to offer do %>
-            <%= image_tag('panama.jpg', class:"card-img") %>
-            <div class="card-img-overlay text-center">
-              <h2 class="card-text-home"><%= state.name %></h2>
-            </div>
-          <% end  %>
+<div class="main_container">
+  <div class="container mt-3">
+    <h2>Nuestras mejores ofertas</h2>
+    <div class="row">
+      <% @offers.each do |offer| %>
+        <% state = State.find(offer.state_id) %>
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 m-2" data-aos="zoom-in">
+          <div class="card-home bg-dark text-white">
+            <%= link_to offer do %>
+              <%= image_tag('panama.jpg', class:"card-img") %>
+              <div class="card-img-overlay text-center">
+                <h2 class="card-text-home"><%= state.name %></h2>
+              </div>
+            <% end  %>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
