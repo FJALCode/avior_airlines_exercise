@@ -27,12 +27,18 @@
         </div>
         <div class="row">
           <div class="col">
-            <h4>Fecha:</h4>
-            <%= b.input :date, as: :hidden,input_html: { value: @offer.date} %>
-            <p><%= @offer.date %></p>
+            <h4>Seleccione su fecha de salida:</h4>
+            <%= b.input :fec_ini, as: :string, required: false, label: false, input_html: {class: "datepicker"} %>
           </div>
         </div>
-        <%= b.input :rate_id, collection: @rates %>
+        <div class="row">
+          <div class="col">
+            <h4>Seleccione su fecha de retorno:</h4>
+            <%= b.input :fec_end, as: :string, required: false, label: false, input_html: {class: "datepicker"} %>
+          </div>
+        </div>
+        <h4>Tarifas:</h4>
+        <%= b.input :rate_id, collection: @rates, label: false %>
         <div class="form-actions">
           <%= b.submit "Reservar Vuelo", class: "btn btn-primary" %>
         </div>
@@ -45,7 +51,6 @@
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     </div>
   </div>
-  <div class="form-inputs">
-    <%= link_to 'Volver', offers_path, class: "btn btn-primary mt-3" %>
-  </div>
+  <br>
+  <%= link_to " Back", offers_path, class: "fas fa-arrow-left"%>
 </div>
