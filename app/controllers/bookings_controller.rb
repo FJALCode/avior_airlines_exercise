@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to bookings_path, notice: 'Booking creado exitosamente.'
     else
-      redirect_to offer_path(@offer)
+      redirect_to offer_path(@offer), alert: 'Wrong parmeters for date'
     end
   end
 
@@ -52,7 +52,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:user_id, :date, :offer_id, :rate_id, :fec_ini, :fec_end)
+    params.require(:booking).permit(:user_id, :offer_id, :rate_id, :fec_ini, :fec_end)
   end
 
   def set_user
