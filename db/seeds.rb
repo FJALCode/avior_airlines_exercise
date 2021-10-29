@@ -24,19 +24,19 @@ puts ""
 puts "Empezará a insertar datos"
 puts "Insertando Usuarios....."
 puts ""
-User.create([{ email: "fernando@gmail.com", name: "fernando", last_name: "Lopez", password: "123456", password_confirmation: "123456", id_number: "V-2512352", phone: "+58414232352", birthdate: Faker::Date.birthday(18, 65) }])
+User.create([{ email: "fernando@gmail.com", name: "fernando", last_name: "Lopez", password: "123456", password_confirmation: "123456", id_number: "V-2512352", admin: true, phone: "+58414232352", birthdate: Faker::Date.birthday(18, 65) }])
 puts "Usuario: fernando@gmail.com, Contraseña: 123456"
 
-User.create([{ email: "alfredo@gmail.com", name: "alfredo", last_name: "Lopez", password: "123456", password_confirmation: "123456", id_number: "V-2512352", phone: "+58414232352", birthdate: Faker::Date.birthday(18, 65) }])
+User.create([{ email: "alfredo@gmail.com", name: "alfredo", last_name: "Lopez", password: "123456", password_confirmation: "123456", id_number: "V-2512352", admin: true,  phone: "+58414232352", birthdate: Faker::Date.birthday(18, 65) }])
 puts "Usuario: alfredo@gmail.com, Contraseña: 123456"
 
-User.create([{ email: "genesis@gmail.com", name: "genesis", last_name: "Lopez", password: "123456", password_confirmation: "123456", id_number: "V-2512352", phone: "+58414232352", birthdate: Faker::Date.birthday(18, 65) }])
+User.create([{ email: "genesis@gmail.com", name: "genesis", last_name: "Lopez", password: "123456", password_confirmation: "123456", id_number: "V-2512352", admin: true,  phone: "+58414232352", birthdate: Faker::Date.birthday(18, 65) }])
 puts "Usuario: genesis@gmail.com, Contraseña: 123456"
 
 User.create([{ email: "jesus@gmail.com", name: "jesus", last_name: "Lopez", password: "123456", password_confirmation: "123456", id_number: "V-2512352", phone: "+58414232352", birthdate: Faker::Date.birthday(18, 65) }])
 puts "Usuario: jesus@gmail.com, Contraseña: 123456"
 
-User.create([{ email: "javier@gmail.com", name: "javier", last_name: "Lopez", password: "123456", password_confirmation: "123456", id_number: "V-2512352", phone: "+58414232352", birthdate: Faker::Date.birthday(18, 65) }])
+User.create([{ email: "javier@gmail.com", name: "javier", last_name: "Lopez", password: "123456", password_confirmation: "123456", id_number: "V-2512352", admin: true,  phone: "+58414232352", birthdate: Faker::Date.birthday(18, 65) }])
 puts "Usuario: javier@gmail.com, Contraseña: 123456"
 
 User.create([{ email: "juan@gmail.com", name: "juan", last_name: "Lopez", password: "123456", password_confirmation: "123456", id_number: "V-2512352", phone: "+58414232352", birthdate: Faker::Date.birthday(18, 65) }])

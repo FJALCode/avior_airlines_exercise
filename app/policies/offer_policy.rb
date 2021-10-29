@@ -14,11 +14,11 @@ class OfferPolicy < ApplicationPolicy
   end
 
   def edit?
-    return true
+    user.admin
   end
 
   def update?
-    return true
+    user.admin
   end
 
   def destroy?

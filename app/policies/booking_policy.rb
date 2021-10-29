@@ -20,4 +20,10 @@ class BookingPolicy < ApplicationPolicy
   def update?
     return true
   end
+
+  private
+
+  # def user_is_owner?
+  #   user == record.user
+  # end
 end
