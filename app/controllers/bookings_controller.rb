@@ -36,23 +36,28 @@ class BookingsController < ApplicationController
     @user_bookings
   end
 
-  # En revision...
   def edit
+    @booking = policy_scope(Booking)
+    authorize @booking
     @user = current_user
     @booking = Booking.find(params[:id])
   end
 
   def update
+    @booking = policy_scope(Booking)
+    authorize @booking
     @user = current_user
     @booking = Booking.find(params[:id])
-    @booking.update(booking_params)
-    redirect_to bookings_path
+    if @booking.update(booking_params)
+      @booking.rate.cost += 40
+      redirect_to bookings_path
+    end
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:user_id, :offer_id, :rate_id, :fec_ini, :fec_end)
+    params.require(:booking).permit(:user_id, :offer_id, :rate_id, :fec_ini, :fec_end, :seats)
   end
 
   def set_user
