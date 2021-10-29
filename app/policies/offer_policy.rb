@@ -20,4 +20,8 @@ class OfferPolicy < ApplicationPolicy
   def update?
     user.admin
   end
+
+  def destroy?
+    return true
+  end
 end

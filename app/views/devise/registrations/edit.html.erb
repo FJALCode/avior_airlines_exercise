@@ -8,7 +8,9 @@
       <%= f.error_notification %>
 
         <div class="form-inputs">
-          <%= f.input :email, required: true, autofocus: true %>
+          <%= f.input :email,
+                      required: true,
+                      autofocus: true %>
 
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
               <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %>
@@ -16,30 +18,58 @@
               <% end %>
                 <div class="row">
                   <div class="col-sm-12 col-md-12 col-lg-6">
-                    <%= f.input :name, required: true, autofocus: true, input_html: { autocomplete: "name" } %>
+                    <%= f.input :name,
+                                required: true,
+                                autofocus: true,
+                                label: "Nombre",
+                                input_html: { autocomplete: "name" } %>
                   </div>
                   <div class="col-sm-12 col-md-12 col-lg-6">
-                    <%= f.input :last_name, required: true, autofocus: true, input_html: { autocomplete: "last_name" } %>
+                    <%= f.input :last_name,
+                                required: true,
+                                autofocus: true,
+                                label: "Apellido",
+                                input_html: { autocomplete: "last_name" } %>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-sm-12 col-md-12 col-lg-6">
-                    <%= f.input :id_number, required: true, autofocus: true, input_html: { autocomplete: "id_number" } %>
+                    <%= f.input :id_number,
+                                required: true,
+                                autofocus: true,
+                                label: "Cédula de Identidad",
+                                input_html: { autocomplete: "id_number" } %>
                   </div>
                   <div class="col-sm-12 col-md-12 col-lg-6">
-                    <%= f.input :phone, required: true, autofocus: true, input_html: { autocomplete: "phone" } %>
+                    <%= f.input :phone,
+                                required: true,
+                                autofocus: true,
+                                label: "Teléfono",
+                                input_html: { autocomplete: "phone" } %>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-sm-12 col-md-12 col-lg-12">
-                    <%= f.input :birthdate, required: true, autofocus: true %>
+                    <%= f.input :birthdate,
+                                required: true,
+                                label: "Fecha de nacimiento",
+                                autofocus: true %>
                   </div>
                 </div>
-                <%= f.input :password, hint: "leave it blank if you don't want to change it" , required: true,
-                  input_html: { autocomplete: "new-password" } %>
-                  <%= f.input :password_confirmation, required: true, input_html: { autocomplete: "new-password" } %>
-                    <%= f.input :current_password, hint: "Requieres ingresar tu actual password" ,
-                      required: true, input_html: { autocomplete: "current-password" } %>
+                <%= f.input :password,
+                            hint: "Deja este espacio en blanco si no quieres cambiar tu contraseña" ,
+                            required: true,
+                            label: "Nueva contraseña",
+                            input_html: { autocomplete: "new-password" } %>
+                <%= f.input :password_confirmation,
+                            required: true,
+                            label: "Confirmar nueva contraseña",
+                            input_html: { autocomplete: "new-password" } %>
+                    <%= f.input :current_password,
+                            hint: "Ingresa tu actual contraseña para guardar los datos" ,
+                            required: true,
+                            label: "Contraseña actual",
+                            input_html: { autocomplete: "current-password" } %>
         </div>
 
         <div class="form-actions text-center">
@@ -53,6 +83,6 @@
               }, method: :delete %>
           </p> -->
 
-          <%= link_to " Back", :back, class: "fas fa-arrow-left"%>
+          <%= link_to " Volver", :back, class: "fas fa-arrow-left"%>
   </div>
 </div>

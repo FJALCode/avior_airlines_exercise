@@ -54,6 +54,18 @@ class OffersController < ApplicationController
     end
   end
 
+ # DELETE /offers/1
+  def destroy
+    @offers = policy_scope(Offer)
+    authorize @offers
+    @offer = Offer.find(params[:id])
+    if @offer.destroy
+      redirect_to offers_path(anchor: "offers-list"), notice: 'Offer was successfully destroyed.'
+    else
+      render 'offers'
+    end
+  end
+
   # GET /offers/new
   # def new
   #   @offer = Offer.new
@@ -72,11 +84,6 @@ class OffersController < ApplicationController
   # end
 
 
-  # DELETE /offers/1
-  # def destroy
-  #   @offer.destroy
-  #   redirect_to offers_url, notice: 'Offer was successfully destroyed.'
-  # end
 
   private
 

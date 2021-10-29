@@ -13,7 +13,7 @@
             placeholder: "Encuentra tu destino ideal" %>
       <%= submit_tag "Buscar", class: "btn btn-danger" %>
     <% end %>
-    <div class="row">
+    <div class="row" id="offers-list">
       <% @offers.each do |offer| %>
         <% state = State.find(offer.state_id) %>
         <% country = Countrie.find(state.countrie_id) %>
@@ -27,6 +27,16 @@
               <%= link_to image_tag('https://images.unsplash.com/photo-1550435913-3f0d9ac998fe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80', class:"card-img-top"), offer %>
             <% end %>
             <div class="card-body">
+            <a id="offer-<%= offer.id %>"></a>
+              <div class="card-edit-delete">
+                <p class="text-right my-1"><%= link_to "Editar", edit_offer_path(offer), class: "text-danger" %> | 
+                <%= link_to "Eliminar", 
+                            offer,
+                            method: :delete,
+                            remote: true,
+                            data: { confirm: "Estas seguro que deseas eliminar?" },
+                            class: "text-danger" %></p>
+              </div>
               <h2 class="card-text offer-text"><%= state.name %></h2>
               <p class="card-text offer-text"> <strong>Pais:</strong> <%= country.name %></p>
               <p class="card-text offer-text"> <strong>Cost:</strong> <%= offer.cost %>$</p>
