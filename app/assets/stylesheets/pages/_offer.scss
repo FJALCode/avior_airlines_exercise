@@ -1,10 +1,18 @@
 .offer-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
     background-size: cover;
-    color: #eee;
+    color: whitesmoke;
     text-align: center;
+    text-shadow: 1px 1px 5px black;
     padding: 90px 0;
     height: 482px;
     padding-bottom: 5px;
+    .contenedor {
+      width: 500px;
+      padding: 20px;
+    }
 }
 
 .offer-text{
@@ -15,4 +23,13 @@
 .offer-show-title{
     font-size: 1.25rem;
     font-weight: 700;
+}
+
+.offer-container {
+  min-height: 200px;
+  margin-top: 20px;
+}
+
+strong {
+  color: gray;
 }

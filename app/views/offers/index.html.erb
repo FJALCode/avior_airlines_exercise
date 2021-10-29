@@ -1,18 +1,20 @@
 <%# <div class="offer-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image-url('halloween.webp');" > %>
 <div class="offer-banner" style="background-image: url('https://images.unsplash.com/photo-1597389110829-7a0d5e6a8d0e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80')">
   <h2>Descubre los mejores destinos a tu lugar favorito!</h2>
-</div>
-<div class="main_container">
-  <div class="container mt-3 mb-3">
-    <h1>Ofertas en vuelos disponibles</h1>
     <%# Insertar form de búsqueda aquí %>
-    <%= form_tag offers_path, method: :get do %>
-      <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Encuentra tu destino ideal" %>
-      <%= submit_tag "Buscar", class: "btn btn-danger" %>
-    <% end %>
+    <div class="contenedor">
+      <%= form_tag offers_path, method: :get do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Encuentra tu destino ideal" %>
+        <%= submit_tag "Buscar", class: "btn btn-danger my-1" %>
+      <% end %>
+    </div>
+</div>
+<div class="offer-container">
+  <div class="container mb-3">
+    <h1>Ofertas en vuelos disponibles</h1>
     <div class="row" id="offers-list">
       <% @offers.each do |offer| %>
         <% state = State.find(offer.state_id) %>
@@ -29,8 +31,8 @@
             <div class="card-body">
             <a id="offer-<%= offer.id %>"></a>
               <div class="card-edit-delete">
-                <p class="text-right my-1"><%= link_to "Editar", edit_offer_path(offer), class: "text-danger" %> | 
-                <%= link_to "Eliminar", 
+                <p class="text-right my-1"><%= link_to "Editar", edit_offer_path(offer), class: "text-danger" %> |
+                <%= link_to "Eliminar",
                             offer,
                             method: :delete,
                             remote: true,
@@ -38,9 +40,9 @@
                             class: "text-danger" %></p>
               </div>
               <h2 class="card-text offer-text"><%= state.name %></h2>
-              <p class="card-text offer-text"> <strong>Pais:</strong> <%= country.name %></p>
-              <p class="card-text offer-text"> <strong>Cost:</strong> <%= offer.cost %>$</p>
-              <p class="card-text offer-text"> <strong>Fecha:</strong> <%= offer.date %></p>
+              <p class="card-text offer-text"> <strong><i class="far fa-flag"></i></strong> <%= country.name %></p>
+              <p class="card-text offer-text"> <strong><i class="far fa-calendar-alt"></i></strong> <%= offer.date %></p>
+              <p class="card-text offer-text"> <strong><i class="fas fa-money-bill-wave"></i></strong> <%= offer.cost %>$</p>
               <p class="card-text offer-text"> <strong>Asientos:</strong> <%= offer.seats %></p>
               <% if offer.available %>
                 <p class="card-text offer-text"> <strong>Estado:</strong> <strong class="text-success">Disponible</strong> </p>
