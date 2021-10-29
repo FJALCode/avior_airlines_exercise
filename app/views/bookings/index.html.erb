@@ -12,23 +12,30 @@
         <%costo_tarifa = booky.rate.cost%>
         <%total_costo = costo_tarifa + (costo_vuelo * booky.seats)%>
         <div class="list-group my-4">
-          <div class="list-group-item">
+          <div class="list-group-item list-group-item-action">
             <div class="d-flex justify-content-between align-items-center">
               <div>
                 <h3><strong><%=state.name%>, <%= country.name %></strong></h3>
-                <small>Aeropuerto Internacional de <%= country.name %></small>
+                <p class="booking-small">Aeropuerto Internacional de <%= country.name %></p>
               </div>
               <p class="booking-title">Fecha del salida:<br><%= booky.fec_ini %></p>
               <p class="booking-title">Fecha del retorno:<br><%= booky.fec_end %></p>
               <h5 class="booking-rate text-danger">Tarifa <%= booky.rate.name %></h5>
             </div>
                 <hr>
-              <h5><%= booky.user.name.capitalize %> <%= booky.user.last_name.capitalize %></h5>
-              <h5>CI: <%= booky.user.id_number %></h5>              
+            <div class="d-flex justify-content-between mb-1">
+              <div>
+                <h5><%= booky.user.name.capitalize %> <%= booky.user.last_name.capitalize %></h5>
+                <p class="booking-small">CI: <%= booky.user.id_number %><br></p>
+              </div>
+              <div>
+              <a class="btn btn-danger" href="#">Editar</a>
+              </div>
+            </div>
             <div class="d-flex justify-content-between">
-              <p class="booking-title">Costo de tarifa:<br><%= booky.rate.cost %>$</p>
-              <p class="booking-title">Número de asientos:<br><span> <%= booky.seats %></span></p>
+              <p class="booking-title-left">Cantidad de asientos:<br><span> <%= booky.seats %></span></p>
               <p class="booking-title">Costo del vuelo:<br><span> <%= booky.offer.cost %>$</span></p>
+              <p class="booking-title">Costo de tarifa:<br><%= booky.rate.cost %>$</p>
               <p class="booking-title">Total:<br><span class="booking-price text-success"> <%= total_costo %>$</span></p>
             </div>
           </div>
