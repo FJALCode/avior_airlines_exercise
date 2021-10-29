@@ -76,7 +76,7 @@ puts ""
 puts "Insertando #{STATES.count} Ofertas de vuelos..."
 # Manera ruby
 STATES.each do |state|
-  Offer.create(state: state, cost: (100..1000).to_a.sample, date: Faker::Date.forward(150))
+  Offer.create(state: state, cost: (100..1000).to_a.sample, date: Faker::Date.forward(150), seats: rand(9) + 1, available: true)
 end
 puts ""
 puts "Insertando Tarifas de vuelos..."

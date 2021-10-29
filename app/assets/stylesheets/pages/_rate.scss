@@ -2,6 +2,9 @@
     background-size: cover;
     background-position: center;
     padding: 220px 0;
+    color: whitesmoke;
+    text-align: center;
+    text-shadow: 1px 1px 5px black;
 }
 
 .baggage {
@@ -42,7 +45,7 @@
     margin: 35px 0;
 }
 
-.icon-info{ 
+.icon-info{
     font-size: 20px;
     margin-right: 20px;
 }
@@ -63,39 +66,38 @@
 .info-general h3 {
     font-weight: bold;
 }
-  
+
 //   // Smallest device
 //   @media (min-width: 100px) and (max-width: 575px) {
 //     .rate-cards {
 //       grid-template-columns: 1fr;
 //     }
 //   }
-  
+
 //   // Small devices (landscape phones, 576px and up)
 //   @media (min-width: 576px) {
 //     .rate-cards {
 //       grid-template-columns: 1fr;
 //     }
 //   }
-  
+
 //   // Medium devices (tablets, 768px and up)
 //   @media (min-width: 768px) {
 //     .rate-cards {
 //       grid-template-columns: 1fr 1fr;
 //     }
 //   }
-  
+
 //   // Large devices (desktops, 992px and up)
 //   @media (min-width: 992px) {
 //     .rate-cards {
 //       grid-template-columns: 1fr 1fr 1fr;
 //     }
 //   }
-  
+
 //   // Extra large devices (large desktops, 1200px and up)
 //   @media (min-width: 1200px) {
 //     .rate-cards {
 //       grid-template-columns: 1fr 1fr 1fr;
 //     }
 //   }
-  
