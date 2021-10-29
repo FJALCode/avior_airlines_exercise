@@ -48,10 +48,8 @@ class BookingsController < ApplicationController
     authorize @booking
     @user = current_user
     @booking = Booking.find(params[:id])
-    if @booking.update(booking_params)
-      @booking.rate.cost += 40
-      redirect_to bookings_path
-    end
+    @booking.update(booking_params)
+    redirect_to bookings_path
   end
 
   private
