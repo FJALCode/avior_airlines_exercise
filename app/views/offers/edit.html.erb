@@ -1,13 +1,15 @@
-<div class="mx-auto py-3 container">
-<h1>Edicion de Vuelo</h1>
-<p>Ingresa los datos a modificar</p>
+<div class="main_container">
+  <div class="mx-auto py-3 container">
+  <h1>Edicion de Vuelo</h1>
+  <p>Ingresa los datos a modificar</p>
 
-<%= simple_form_for [ @offer] do |f| %>
-    <%= f.input :date, label: "Fecha de vuelo", input_html: { autocomplete: "date" } %>
-    <%= f.input :cost, label: "Costo del vuelo", input_html: { autocomplete: "cost" } %>
-    <%= f.input :photo_url, as: :file %>
-    <%= f.submit "Editar Vuelo", class: "btn btn-danger my-3" %>
-  <% end %>
-<br>
-<%= link_to "Volver", offer_path, class: "btn btn-light" %>
+  <%= simple_form_for [ @offer] do |f| %>
+      <%= f.input :date, label: "Fecha de vuelo", input_html: { autocomplete: "date" } %>
+      <%= f.input :cost, label: "Costo del vuelo", input_html: { autocomplete: "cost" } %>
+      <%= f.input :photo_url, as: :file %>
+      <%= f.submit "Editar Vuelo", class: "btn btn-danger my-3" %>
+    <% end %>
+  <br>
+  <%= link_to "Volver", offer_path, class: "btn btn-light" %>
+  </div>
 </div>

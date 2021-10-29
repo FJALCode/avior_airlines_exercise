@@ -1,31 +1,33 @@
-<div class="container my-4">
-  <h2>Tus Bookings</h2>
-  <%if @user_bookings.empty?%>
-    <h4 class="my-4"style="color:red;"> Actualmente no tienes Bookings, crea uno!</h4>
-    <%= link_to "Ver Ofertas", offers_path, class: "btn btn-danger"%>
-  <%else%>
-      <% @user_bookings.each do |booky| %>
-      <%state = State.find(booky.offer.state_id)%>
-      <%country = Countrie.find(state.countrie_id)%>
-      <div class="card my-4">
-        <div class="card-header">
-          <h4><%= booky.user.name.capitalize %></h4>
+<div class="main_container">
+  <div class="container my-4">
+    <h2>Tus Bookings</h2>
+    <%if @user_bookings.empty?%>
+      <h4 class="my-4"style="color:red;"> Actualmente no tienes Bookings, crea uno!</h4>
+      <%= link_to "Ver Ofertas", offers_path, class: "btn btn-danger"%>
+    <%else%>
+        <% @user_bookings.each do |booky| %>
+        <%state = State.find(booky.offer.state_id)%>
+        <%country = Countrie.find(state.countrie_id)%>
+        <div class="card my-4">
+          <div class="card-header">
+            <h4><%= booky.user.name.capitalize %></h4>
+          </div>
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+            <%costo_vuelo = booky.offer.cost%>
+            <%costo_tarifa = booky.rate.cost%>
+            <%total_costo = costo_tarifa + costo_vuelo%>
+            <p style="font-size:18px;">Destino: <%=country.name%>, <%= state.name %></p>
+            <p style="font-size:18px;">Fecha del salida: <%= booky.fec_ini %></p>
+            <p style="font-size:18px;">Fecha del retorno: <%= booky.fec_end %></p>
+            <p style="font-size:18px;">Tarifa elegida: <%= booky.rate.name %></p>
+            <p style="font-size:18px;">Costo de tarifa: <%= booky.rate.cost %>$</p>
+            <p style="font-size:18px;">Costo del vuelo: <span> <%= booky.offer.cost %>$</span></p>
+            <p style="font-size:18px;">Costo total: <span style="color:limegreen;"> <%= total_costo %>$</span></p>
+            </blockquote>
+          </div>
         </div>
-        <div class="card-body">
-          <blockquote class="blockquote mb-0">
-          <%costo_vuelo = booky.offer.cost%>
-          <%costo_tarifa = booky.rate.cost%>
-          <%total_costo = costo_tarifa + costo_vuelo%>
-          <p style="font-size:18px;">Destino: <%=country.name%>, <%= state.name %></p>
-          <p style="font-size:18px;">Fecha del salida: <%= booky.fec_ini %></p>
-          <p style="font-size:18px;">Fecha del retorno: <%= booky.fec_end %></p>
-          <p style="font-size:18px;">Tarifa elegida: <%= booky.rate.name %></p>
-          <p style="font-size:18px;">Costo de tarifa: <%= booky.rate.cost %>$</p>
-          <p style="font-size:18px;">Costo del vuelo: <span> <%= booky.offer.cost %>$</span></p>
-          <p style="font-size:18px;">Costo total: <span style="color:limegreen;"> <%= total_costo %>$</span></p>
-          </blockquote>
-        </div>
-      </div>
-      <% end %>
-  <%end%>
+        <% end %>
+    <%end%>
+  </div>
 </div>
