@@ -30,16 +30,18 @@
             <% end %>
             <div class="card-body">
             <a id="offer-<%= offer.id %>"></a>
-            <% if policy(offer).edit? %>
-              <div class="card-edit-delete">
-                <p class="text-right my-1"><%= link_to "Editar", edit_offer_path(offer), class: "text-danger" %> |
-                <%= link_to "Eliminar",
-                            offer,
-                            method: :delete,
-                            remote: true,
-                            data: { confirm: "Estas seguro que deseas eliminar?" },
-                            class: "text-danger" %></p>
-              </div>
+            <% if user_signed_in? %>
+              <% if policy(offer).edit? %>
+                <div class="card-edit-delete">
+                  <p class="text-right my-1"><%= link_to "Editar", edit_offer_path(offer), class: "text-danger" %> |
+                  <%= link_to "Eliminar",
+                              offer,
+                              method: :delete,
+                              remote: true,
+                              data: { confirm: "Estas seguro que deseas eliminar?" },
+                              class: "text-danger" %></p>
+                </div>
+              <% end %>
             <% end %>
               <h2 class="card-text offer-text"><%= state.name %></h2>
               <p class="card-text offer-text"> <strong><i class="far fa-flag"></i></strong> <%= country.name %></p>
