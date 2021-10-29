@@ -9,7 +9,7 @@
         <%state = State.find(booky.offer.state_id)%>
         <%country = Countrie.find(state.countrie_id)%>
         <%costo_vuelo = booky.offer.cost%>
-        <%costo_tarifa = booky.rate.cost%>
+        <%costo_tarifa = booky.rate.cost + booky.rates_total%>
         <%total_costo = costo_tarifa + (costo_vuelo * booky.seats)%>
         <div class="list-group my-4">
           <div class="list-group-item list-group-item-action">
@@ -34,10 +34,15 @@
             </div>
             <div class="d-flex justify-content-between">
               <p class="booking-title-left">Cantidad de asientos:<br><span> <%= booky.seats %></span></p>
+              <% if booky.rates_total > 0 %>
+                <p class="booking-title">Penalización 10%:<br><span> + <%= booky.rates_total %>$</span></p>
+              <% end %>
               <p class="booking-title">Costo del vuelo:<br><span> <%= booky.offer.cost %>$</span></p>
               <p class="booking-title">Costo de tarifa:<br><%= booky.rate.cost %>$</p>
               <p class="booking-title">Total:<br><span class="booking-price text-success"> <%= total_costo %>$</span></p>
             </div>
+            <%= link_to "edit", edit_booking_path(booky) %>
+            <p class="note-booking">Nota: Los precios de vuelo estan sujetos a la cantidad de asientos reservados</p>
           </div>
         </div>
         <% end %>
