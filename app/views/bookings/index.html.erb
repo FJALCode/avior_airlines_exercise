@@ -29,7 +29,7 @@
                 <p class="booking-small">CI: <%= booky.user.id_number %><br></p>
               </div>
               <div>
-              <a class="btn btn-danger" href="#">Editar</a>
+              <%= link_to "Editar fechas", edit_booking_path(booky), class: "btn btn-danger" %>
               </div>
             </div>
             <div class="d-flex justify-content-between">
@@ -41,7 +41,6 @@
               <p class="booking-title">Costo de tarifa:<br><%= booky.rate.cost %>$</p>
               <p class="booking-title">Total:<br><span class="booking-price text-success"> <%= total_costo %>$</span></p>
             </div>
-            <%= link_to "edit", edit_booking_path(booky) %>
             <p class="note-booking">Nota: Los precios de vuelo estan sujetos a la cantidad de asientos reservados</p>
           </div>
         </div>
