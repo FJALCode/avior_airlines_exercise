@@ -1,51 +1,80 @@
-<div class="offer-banner" style="background-image: url('https://images.unsplash.com/photo-1596120236172-231999844ade?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')">
-  <h2><%= @country.name %></h2>
-</div>
-<div class="container mt-5 mb-5">
-  <div class="row">
-    <div class="col-md-12 col-lg-6">
-      <h2>Información del vuelo</h2>
-      <%= simple_form_for [@offer, @booking] do |b| %>
-        <% @rates = Rate.all %>
-        <div class="row">
-          <div class="col">
-            <h4>Pais:</h4>
-            <p><%= @country.name %></p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <h4>Estado:</h4>
-            <p><%= @state.name %></p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <h4>Costo:</h4>
-            <p><%= @offer.cost %>$</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <h4>Fecha:</h4>
-            <%= b.input :date, as: :hidden,input_html: { value: @offer.date} %>
-            <p><%= @offer.date %></p>
-          </div>
-        </div>
-        <%= b.input :rate_id, collection: @rates %>
-        <div class="form-actions">
-          <%= b.submit "Reservar Vuelo", class: "btn btn-primary" %>
-        </div>
-      <% end %>
-    </div>
-    <div class="col-md-12 col-lg-6">
-      <div id="map"
-     style="width: 100%; height: 400px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-    </div>
+<% if @offer.photo_url.attached? %>
+  <div class="offer-banner" style="background-image: url('<%= cl_image_path @offer.photo_url.key %>')" >
+    <h2><%= @country.name %></h2>
   </div>
-  <div class="form-inputs">
-    <%= link_to 'Volver', offers_path, class: "btn btn-primary mt-3" %>
+<% else %>
+  <div class="offer-banner" style="background-image: url('https://images.unsplash.com/photo-1596120236172-231999844ade?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')">
+    <h2><%= @country.name %></h2>
+  </div>
+<% end %>
+<%# <div class="offer-banner" style="background-image: url('https://images.unsplash.com/photo-1596120236172-231999844ade?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')">
+  <h2><%= @country.name %><%#</h2></div> %>
+<div class="main_container">
+  <div class="container mt-5 mb-5">
+    <div class="row">
+      <div class="col-md-12 col-lg-6">
+        <h2>Información del vuelo</h2>
+        <%= simple_form_for [@offer, @booking] do |b| %>
+          <% @rates = Rate.all %>
+          <div class="row">
+            <div class="col">
+              <p><strong class="offer-show-title">Pais:</strong> <%= @country.name %></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p><strong class="offer-show-title">Estado:</strong> <%= @state.name %></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p><strong class="offer-show-title">Costo:</strong> <%= @offer.cost %>$</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p><strong class="offer-show-title">Asientos Disponibles:</strong> <%= @offer.seats %></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p class="offer-show-title">Seleccione su fecha de salida:</p>
+              <%= b.input :fec_ini, as: :string, required: false, label: false, required: true, autofocus: true, input_html: {class: "datepicker"} %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p class="offer-show-title">Seleccione su fecha de retorno:</p>
+              <%= b.input :fec_end, as: :string, required: false, label: false, required: true, autofocus: true, input_html: {class: "datepicker"} %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p class="offer-show-title">Cantidad de Asientos:</p>
+              <%= b.input :seats, collection: 1..@offer.seats, label: false, required: true, autofocus: true %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p class="offer-show-title">Tarifas:</p>
+              <%= b.input :rate_id, collection: @rates, label: false, required: true, autofocus: true %>
+              <div class="form-actions">
+                <%= b.submit "Reservar Vuelo", class: "btn btn-danger" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-md-12 col-lg-6">
+        <div id="map"
+      style="width: 100%; height: 400px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+      </div>
+      <br>
+    </div>
+    <div class="mt-5">
+      <%= link_to 'Volver', offers_path, class: "mt-3" %>
+    </div>
   </div>
 </div>

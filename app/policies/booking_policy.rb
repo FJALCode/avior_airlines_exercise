@@ -12,4 +12,18 @@ class BookingPolicy < ApplicationPolicy
   def create?
     return true
   end
+
+  def edit?
+    return true
+  end
+
+  def update?
+    return true
+  end
+
+  private
+
+  # def user_is_owner?
+  #   user == record.user
+  # end
 end

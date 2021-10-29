@@ -1,252 +1,249 @@
 <div class="banner-rate" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1561131668-f63504fc549d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=857&q=80);">
+        <h1>You choose how to fly!</h1>
+        <h5>Learn about the benefits of each of our rates</h5>
+</div>
+
   <div class="container-rate">
-  </div>
-</div>
-<div class="container-rate">
-  <div class="baggage">
-      <%= image_tag "BeneficiosTexto.png", alt: "Beneficios" %>
-      <h2>You choose how to fly!</h2>
-      <p>Learn about the benefits of each of our rates</p>
-  </div>
-</div>
-
-<%# Cards de las tarifas %>
-
-<div class="rate-cards">  
-  <div class="card-category">
-    <a href="#informacion"> <%= image_tag "rate-medium.png", alt: "Tarifa Medium" %></a>
+    <div class="baggage">
+        <%= image_tag "BeneficiosTexto.png", alt: "Beneficios" %>
+    </div>
   </div>
 
-  <div class="card-category">
-    <a href="#informacion"><%= image_tag "rate-ultra.png", alt: "Tarifa Ultra" %></a>
+  <%# Cards de las tarifas %>
+
+  <div class="rate-cards">
+    <div class="card-category">
+      <a href="#informacion"> <%= image_tag "rate-medium.png", alt: "Tarifa Medium" %></a>
+    </div>
+
+    <div class="card-category">
+      <a href="#informacion"><%= image_tag "rate-ultra.png", alt: "Tarifa Ultra" %></a>
+    </div>
+
+    <div class="card-category">
+      <a href="#informacion"><%= image_tag "businness-rate.png", alt: "Tarifa Bussiness" %></a>
+    </div>
   </div>
 
-  <div class="card-category">
-    <a href="#informacion"><%= image_tag "businness-rate.png", alt: "Tarifa Bussiness" %></a>
-  </div>
-</div>
-
-<%# Informacion de cada tarifa %>
-<div class="cards-info" id="informacion">
-  <%# Informacion de tarifa medium %>
-  <div class="medium-rate">
-    <div class="info-card">
+  <%# Informacion de cada tarifa %>
+  <div class="cards-info" id="informacion">
+    <%# Informacion de tarifa medium %>
+    <div class="medium-rate">
+      <div class="info-card">
+        <%# Info Equipaje de mano %>
+        <div class="icon-info">
+          <i class="fas fa-shopping-bag"></i>
+        </div>
+        <div class="info-rate">
+          <p class="title">Hand Baggage</h6>
+          <p>1 Changes, 8 Kg</p>
+        </div>
+      </div>
+      <%# Info Equipaje %>
+      <div class="info-card">
+        <div class="icon-info">
+          <i class="fas fa-suitcase-rolling"></i>
+        </div>
+        <div class="info-rate">
+          <p class="title">Baggage</h6>
+          <p>1 piece, 23 Kg</p>
+        </div>
+      </div>
+      <%# Info penalidad por cambios de boletos %>
+      <div class="info-card">
+        <div class="icon-info">
+          <i class="far fa-calendar-alt"></i>
+        </div>
+        <div class="info-rate">
+          <p class="title">Changes</h6>
+          <p>10% penalty</p>
+        </div>
+      </div>
+      <%# Info de penalidad por reembolsos %>
+      <div class="info-card">
+        <div class="icon-info">
+          <i class="fas fa-hand-holding-usd"></i>
+        </div>
+        <div class="info-rate">
+          <p class="title">Refunds</h6>
+          <p>15% penalty</p>
+        </div>
+      </div>
+      <%# Info de millas %>
+      <div class="info-card">
+        <div class="icon-info">
+          <i class="far fa-credit-card"></i>
+        </div>
+        <div class="info-rate">
+          <p class="title">Miles</h6>
+          <p></p>
+        </div>
+      </div>
+      <%# Info de Seleccion de asiento %>
+      <div class="info-card">
+        <div class="icon-info">
+          <i class="fas fa-plane"></i>
+        </div>
+        <div class="info-rate">
+          <p class="title">Seat Selection</h6>
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <%# Informacion de tarifa ultra %>
+    <div class="ultra-rate">
       <%# Info Equipaje de mano %>
-      <div class="icon-info">
-        <i class="fas fa-shopping-bag"></i>
+      <div class="info-card">
+        <div class="icon-info">
+          <i class="fas fa-shopping-bag"></i>
+        </div>
+        <div class="info-rate">
+          <p class="title">Hand Baggage</p>
+          <p>1 piece, 8 Kg</p>
+        </div>
       </div>
-      <div class="info-rate">
-        <p class="title">Hand Baggage</h6>
-        <p>1 Changes, 8 Kg</p>
+      <%# Info Equipaje %>
+      <div class="info-card">
+        <div class="icon-info">
+          <i class="fas fa-suitcase-rolling"></i>
+        </div>
+        <div class="info-rate">
+          <p class="title">Baggage</h6>
+          <p>1 piece, 23 Kg</p>
+        </div>
       </div>
-    </div>
-    <%# Info Equipaje %>
-    <div class="info-card">
-      <div class="icon-info">
-        <i class="fas fa-suitcase-rolling"></i>
+      <%# Info penalidad por cambios de boletos %>
+      <div class="info-card">
+        <div class="icon-info">
+          <i class="far fa-calendar-alt"></i>
+        </div>
+        <div class="info-rate">
+          <p class="title">Changes</h6>
+          <p>10% penalty</p>
+        </div>
       </div>
-      <div class="info-rate">
-        <p class="title">Baggage</h6>
-        <p>1 piece, 23 Kg</p>
+      <%# Info de penalidad por reembolsos %>
+      <div class="info-card">
+        <div class="icon-info">
+          <i class="fas fa-hand-holding-usd"></i>
+        </div>
+        <div class="info-rate">
+          <p class="title">Refunds</h6>
+          <p>15% penalty</p>
+        </div>
       </div>
-    </div>
-    <%# Info penalidad por cambios de boletos %>
-    <div class="info-card">
-      <div class="icon-info">
-        <i class="far fa-calendar-alt"></i>
+      <%# Info de descuento para niños %>
+      <div class="info-card">
+        <div class="icon-info">
+          <i class="fas fa-child"></i>
+        </div>
+        <div class="info-rate">
+          <p class="title">Children discount</h6>
+          <p>10% Discount</p>
+        </div>
       </div>
-      <div class="info-rate">
-        <p class="title">Changes</h6>
-        <p>10% penalty</p>
-      </div>
-    </div>
-    <%# Info de penalidad por reembolsos %>
-    <div class="info-card">
-      <div class="icon-info">
-        <i class="fas fa-hand-holding-usd"></i>
-      </div>
-      <div class="info-rate">
-        <p class="title">Refunds</h6>
-        <p>15% penalty</p>
-      </div>
-    </div>
-    <%# Info de millas %>
-    <div class="info-card">
-      <div class="icon-info">
-        <i class="far fa-credit-card"></i>
-      </div>
-      <div class="info-rate">
-        <p class="title">Miles</h6>
-        <p></p>
-      </div>
-    </div>
-    <%# Info de Seleccion de asiento %>
-    <div class="info-card">
-      <div class="icon-info">
-        <i class="fas fa-plane"></i>
-      </div>
-      <div class="info-rate">
-        <p class="title">Seat Selection</h6>
-        <p></p>
-      </div>
-    </div>
-  </div>
-  <%# Informacion de tarifa ultra %>
-  <div class="ultra-rate">
-    <%# Info Equipaje de mano %>
-    <div class="info-card">
-      <div class="icon-info">
-        <i class="fas fa-shopping-bag"></i>
-      </div>
-      <div class="info-rate">
-        <p class="title">Hand Baggage</p>
-        <p>1 piece, 8 Kg</p>
-      </div>
-    </div>
-    <%# Info Equipaje %>
-    <div class="info-card">
-      <div class="icon-info">
-        <i class="fas fa-suitcase-rolling"></i>
-      </div>
-      <div class="info-rate">
-        <p class="title">Baggage</h6>
-        <p>1 piece, 23 Kg</p>
-      </div>
-    </div>
-    <%# Info penalidad por cambios de boletos %>
-    <div class="info-card">
-      <div class="icon-info">
-        <i class="far fa-calendar-alt"></i>
-      </div>
-      <div class="info-rate">
-        <p class="title">Changes</h6>
-        <p>10% penalty</p>
-      </div>
-    </div>
-    <%# Info de penalidad por reembolsos %>
-    <div class="info-card">
-      <div class="icon-info">
-        <i class="fas fa-hand-holding-usd"></i>
-      </div>
-      <div class="info-rate">
-        <p class="title">Refunds</h6>
-        <p>15% penalty</p>
-      </div>
-    </div>
-    <%# Info de descuento para niños %>
-    <div class="info-card">
-      <div class="icon-info">
-        <i class="fas fa-child"></i>
-      </div>
-      <div class="info-rate">
-        <p class="title">Children discount</h6>
-        <p>10% Discount</p>
-      </div>
-    </div>
-    <%# Info de millas %>
-  
-    <div class="info-card">
-      <div class="icon-info">
-        <i class="far fa-credit-card"></i>
-      </div>
-      <div class="info-rate">
-        <p class="title">Miles</p>
-        <p></p>
-      </div>
-    </div>
-    <%# Info de Seleccion de asiento %>
-    <div class="info-card">
-      <div class="icon-info">
-        <i class="fas fa-plane"></i>
-      </div>
-      <div class="info-rate">
-        <p class="title">Seat Selection</h6>
-        <p></p>
-      </div>
-    </div>
-  </div>
-  <%# Informacion de tarifa business %>
-  <div class="business-rate">
-    <%# Info Equipaje de mano %>
-    <div class="info-card">
-      <div class="icon-info">
-        <i class="fas fa-shopping-bag"></i>
-      </div>
-      <div class="info-rate">
-        <p class="title">Hand Baggage</p>
-        <p>1 piece, 8 Kg</p>
-      </div>
-    </div>
-    <%# Info Equipaje %>
-    <div class="info-card">
-      <div class="icon-info">
-        <i class="fas fa-suitcase-rolling"></i>
-      </div>
-      <div class="info-rate">
-        <p class="title">Baggage</h6>
-        <p>2 piece, 32 Kg</p>
-      </div>
-    </div>
-    <%# Info penalidad por cambios de boletos %>
-    <div class="info-card">
-      <div class="icon-info">
-        <i class="far fa-calendar-alt"></i>
-      </div>
-      <div class="info-rate">
-        <p class="title">Changes</h6>
-        <p>10% penalty</p>
-      </div>
-    </div>
-    <%# Info de penalidad por reembolsos %>
-    <div class="info-card">
-      <div class="icon-info">
-        <i class="fas fa-hand-holding-usd"></i>
-      </div>
-      <div class="info-rate">
-        <p class="title">Refunds</h6>
-        <p>15% penalty</p>
-      </div>
-    </div>
-    <%# Info de descuento para niños %>
-    <div class="info-card">
-      <div class="icon-info">
-        <i class="fas fa-child"></i>
-      </div>
-      <div class="info-rate">
-        <p class="title">Children discount</h6>
-        <p>10% Discount</p>
-      </div>
-    </div>
-    <%# Info de Seleccion de asiento %>
-    <div class="info-card">
-      <div class="icon-info">
-        <i class="fas fa-plane"></i>
-      </div>
-      <div class="info-rate">
-        <p class="title">Seat Selection</h6>
-        <p></p>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="info-general mx-auto" style="width: 900px;">
-    <h3>General information about our airfares</h3>
-    <h3>Suitcases</h3>
-    <ul>
-      <li>The charge for additional luggage will be made according to the base rate of the purchased ticket, calculating 1% per excess kilogram.</li>
-      <li>Additional luggage is subject to the weight and balance of the aircraft, in case of not being able to board it, at the time of check-in, you must sign a voluntary separation to be sent on the next flight (subject to availability).</li>
-    </ul>
-    <h3>Changes</h3>
-    <ul>
-      <li>Airfares may be combinable, if you wish to make a change of date or any additional service; it will be governed by the policies/conditions of the segment to be modified.</li>
-    </ul>
-    <h3>Adicionales</h3>
-    <ul>
-      <li>Requests for additional services must be made at the time of purchase (assistance, pets, unaccompanied minors, among others).</li>
-      <li>The benefits of our Avior Plus memberships apply to all rates.</li>
-    </ul>
-  </div>
-</div>
+      <%# Info de millas %>
 
-
+      <div class="info-card">
+        <div class="icon-info">
+          <i class="far fa-credit-card"></i>
+        </div>
+        <div class="info-rate">
+          <p class="title">Miles</p>
+          <p></p>
+        </div>
+      </div>
+      <%# Info de Seleccion de asiento %>
+      <div class="info-card">
+        <div class="icon-info">
+          <i class="fas fa-plane"></i>
+        </div>
+        <div class="info-rate">
+          <p class="title">Seat Selection</h6>
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <%# Informacion de tarifa business %>
+    <div class="business-rate">
+      <%# Info Equipaje de mano %>
+      <div class="info-card">
+        <div class="icon-info">
+          <i class="fas fa-shopping-bag"></i>
+        </div>
+        <div class="info-rate">
+          <p class="title">Hand Baggage</p>
+          <p>1 piece, 8 Kg</p>
+        </div>
+      </div>
+      <%# Info Equipaje %>
+      <div class="info-card">
+        <div class="icon-info">
+          <i class="fas fa-suitcase-rolling"></i>
+        </div>
+        <div class="info-rate">
+          <p class="title">Baggage</h6>
+          <p>2 piece, 32 Kg</p>
+        </div>
+      </div>
+      <%# Info penalidad por cambios de boletos %>
+      <div class="info-card">
+        <div class="icon-info">
+          <i class="far fa-calendar-alt"></i>
+        </div>
+        <div class="info-rate">
+          <p class="title">Changes</h6>
+          <p>10% penalty</p>
+        </div>
+      </div>
+      <%# Info de penalidad por reembolsos %>
+      <div class="info-card">
+        <div class="icon-info">
+          <i class="fas fa-hand-holding-usd"></i>
+        </div>
+        <div class="info-rate">
+          <p class="title">Refunds</h6>
+          <p>15% penalty</p>
+        </div>
+      </div>
+      <%# Info de descuento para niños %>
+      <div class="info-card">
+        <div class="icon-info">
+          <i class="fas fa-child"></i>
+        </div>
+        <div class="info-rate">
+          <p class="title">Children discount</h6>
+          <p>10% Discount</p>
+        </div>
+      </div>
+      <%# Info de Seleccion de asiento %>
+      <div class="info-card">
+        <div class="icon-info">
+          <i class="fas fa-plane"></i>
+        </div>
+        <div class="info-rate">
+          <p class="title">Seat Selection</h6>
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="info-general mx-auto" style="width: 900px;">
+      <h3>General information about our airfares</h3>
+      <h3>Suitcases</h3>
+      <ul>
+        <li>The charge for additional luggage will be made according to the base rate of the purchased ticket, calculating 1% per excess kilogram.</li>
+        <li>Additional luggage is subject to the weight and balance of the aircraft, in case of not being able to board it, at the time of check-in, you must sign a voluntary separation to be sent on the next flight (subject to availability).</li>
+      </ul>
+      <h3>Changes</h3>
+      <ul>
+        <li>Airfares may be combinable, if you wish to make a change of date or any additional service; it will be governed by the policies/conditions of the segment to be modified.</li>
+      </ul>
+      <h3>Adicionales</h3>
+      <ul>
+        <li>Requests for additional services must be made at the time of purchase (assistance, pets, unaccompanied minors, among others).</li>
+        <li>The benefits of our Avior Plus memberships apply to all rates.</li>
+      </ul>
+    </div>
+  </div>

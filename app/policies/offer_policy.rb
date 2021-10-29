@@ -12,4 +12,16 @@ class OfferPolicy < ApplicationPolicy
   def index?
     return true
   end
+
+  def edit?
+    user.admin
+  end
+
+  def update?
+    user.admin
+  end
+
+  def destroy?
+    return true
+  end
 end

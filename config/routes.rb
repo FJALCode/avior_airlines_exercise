@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
   devise_for :users
-  resources :bookings, only: %i[index]
-  resources :offers, only: [:show, :index] do
+  resources :bookings, only: %i[index edit update]
+  resources :offers, only: [:show, :index, :edit, :update, :destroy] do
     resources :bookings, only: [:create]
   end
   get 'rates', to: 'rates#rate', as: :rates
