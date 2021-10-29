@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_28_213004) do
+ActiveRecord::Schema.define(version: 2021_10_29_145947) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2021_10_28_213004) do
     t.datetime "updated_at", precision: 6, null: false
     t.date "fec_ini"
     t.date "fec_end"
+    t.integer "seats"
     t.index ["offer_id"], name: "index_bookings_on_offer_id"
     t.index ["rate_id"], name: "index_bookings_on_rate_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
@@ -63,6 +64,8 @@ ActiveRecord::Schema.define(version: 2021_10_28_213004) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "photo_url"
+    t.boolean "available"
+    t.integer "seats"
     t.index ["state_id"], name: "index_offers_on_state_id"
   end
 
