@@ -48,6 +48,8 @@ class BookingsController < ApplicationController
     authorize @booking
     @user = current_user
     @booking = Booking.find(params[:id])
+    penalitation = @booking.rate.cost * 0.10
+    @booking.rates_total = penalitation
     @booking.update(booking_params)
     redirect_to bookings_path
   end
