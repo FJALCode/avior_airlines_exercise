@@ -10,26 +10,26 @@
         <%country = Countrie.find(state.countrie_id)%>
         <%costo_vuelo = booky.offer.cost%>
         <%costo_tarifa = booky.rate.cost%>
-        <%total_costo = costo_tarifa + costo_vuelo%>
+        <%total_costo = costo_tarifa + (costo_vuelo * booky.seats)%>
         <div class="list-group my-4">
           <div class="list-group-item">
             <div class="d-flex justify-content-between align-items-center">
               <div>
-                <h3><%=state.name%>, <%= country.name %></h3>
+                <h3><strong><%=state.name%>, <%= country.name %></strong></h3>
                 <small>Aeropuerto Internacional de <%= country.name %></small>
               </div>
-              <p style="font-size:18px;">Fecha del salida:<br><%= booky.fec_ini %></p>
-              <p style="font-size:18px;">Fecha del retorno:<br><%= booky.fec_end %></p>
-              <h5 style="font-weight: 800; color: red;">Tarifa <%= booky.rate.name %></h5>
+              <p class="booking-title">Fecha del salida:<br><%= booky.fec_ini %></p>
+              <p class="booking-title">Fecha del retorno:<br><%= booky.fec_end %></p>
+              <h5 class="booking-rate text-danger">Tarifa <%= booky.rate.name %></h5>
             </div>
                 <hr>
               <h5><%= booky.user.name.capitalize %> <%= booky.user.last_name.capitalize %></h5>
-              <small>CI: <%= booky.user.id_number %></small>
-              <p>Número de asientos reservados: 1</p> <%# EDITAR AQUÍ NUEVA COLUMNA ASIENTOS RESERVADOS%>
+              <h5>CI: <%= booky.user.id_number %></h5>              
             <div class="d-flex justify-content-between">
-              <p style="font-size:18px;">Costo de tarifa:<br><%= booky.rate.cost %>$</p>
-              <p style="font-size:18px;">Costo del vuelo:<br><span> <%= booky.offer.cost %>$</span></p>
-              <p style="font-size:18px;">Total:<br><span style="font-size:22px; color:limegreen;"> <%= total_costo %>$</span></p>
+              <p class="booking-title">Costo de tarifa:<br><%= booky.rate.cost %>$</p>
+              <p class="booking-title">Número de asientos:<br><span> <%= booky.seats %></span></p>
+              <p class="booking-title">Costo del vuelo:<br><span> <%= booky.offer.cost %>$</span></p>
+              <p class="booking-title">Total:<br><span class="booking-price text-success"> <%= total_costo %>$</span></p>
             </div>
           </div>
         </div>

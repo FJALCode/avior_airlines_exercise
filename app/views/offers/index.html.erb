@@ -31,8 +31,14 @@
               <p class="card-text offer-text"> <strong>Pais:</strong> <%= country.name %></p>
               <p class="card-text offer-text"> <strong>Cost:</strong> <%= offer.cost %>$</p>
               <p class="card-text offer-text"> <strong>Fecha:</strong> <%= offer.date %></p>
-              <p class="card-text offer-text"> <strong>Capacidad:</strong> Disponible</p>
-              <%= link_to "Más Información...", offer, class: "btn btn-danger mt-3" %>
+              <p class="card-text offer-text"> <strong>Asientos:</strong> <%= offer.seats %></p>
+              <% if offer.available %>
+                <p class="card-text offer-text"> <strong>Estado:</strong> <strong class="text-success">Disponible</strong> </p>
+                <%= link_to "Más Información...", offer, class: "btn btn-danger mt-3" %>
+              <% else %>
+                <p class="card-text offer-text"> <strong>Estado:</strong> <strong class="text-danger">No Disponible</strong></p>
+                <button type="button" class="btn btn-danger mt-3" disabled>Más Información...</button>
+              <% end %>
             </div>
           </div>
         </div>
