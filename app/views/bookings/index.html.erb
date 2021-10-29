@@ -34,7 +34,9 @@
               <p class="booking-title">Costo del vuelo:<br><span> <%= booky.offer.cost %>$</span></p>
               <p class="booking-title">Total:<br><span class="booking-price text-success"> <%= total_costo %>$</span></p>
             </div>
-            <%= link_to "edit", edit_booking_path(booky) %>
+            <% if current_user == booky.user %>
+              <%= link_to "Edit", edit_booking_path(booky) %>
+            <% end %>
             <p class="note-booking">Nota: Los precios de vuelo estan sujetos a la cantidad de asientos reservados</p>
           </div>
         </div>
