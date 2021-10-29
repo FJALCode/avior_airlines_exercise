@@ -11,7 +11,7 @@
             params[:query],
             class: "form-control",
             placeholder: "Encuentra tu destino ideal" %>
-      <%= submit_tag "Buscar", class: "btn btn-danger" %>
+      <%= submit_tag "Buscar", class: "btn btn-danger search-btn" %>
     <% end %>
     <div class="row" id="offers-list">
       <% @offers.each do |offer| %>
@@ -28,16 +28,18 @@
             <% end %>
             <div class="card-body">
             <a id="offer-<%= offer.id %>"></a>
-            <% if policy(offer).edit? %>
-              <div class="card-edit-delete">
-                <p class="text-right my-1"><%= link_to "Editar", edit_offer_path(offer), class: "text-danger" %> |
-                <%= link_to "Eliminar",
-                            offer,
-                            method: :delete,
-                            remote: true,
-                            data: { confirm: "Estas seguro que deseas eliminar?" },
-                            class: "text-danger" %></p>
-              </div>
+            <% if user_signed_in? %>
+              <% if policy(offer).edit? %>
+                <div class="card-edit-delete">
+                  <p class="text-right my-1"><%= link_to "Editar", edit_offer_path(offer), class: "text-danger" %> |
+                  <%= link_to "Eliminar",
+                              offer,
+                              method: :delete,
+                              remote: true,
+                              data: { confirm: "Estas seguro que deseas eliminar?" },
+                              class: "text-danger" %></p>
+                </div>
+              <% end %>
             <% end %>
               <h2 class="card-text offer-text"><%= state.name %></h2>
               <p class="card-text offer-text"> <strong>Pais:</strong> <%= country.name %></p>
